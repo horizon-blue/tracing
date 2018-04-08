@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import './index.css';
 import gear1 from './assets/gear1.svg';
 import gear2 from './assets/gear2.svg';
 
