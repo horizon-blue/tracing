@@ -1,5 +1,12 @@
 {
   "parser": "babel-eslint",
   "plugins": ["react"],
-  "extends": ["eslint:recommended", "plugin:react/recommended"]
+  "extends": ["eslint:recommended", "plugin:react/recommended", "plugin:jsx-a11y/recommended"],
+  "rules": {
+    "react/jsx-pascal-case": "error",
+    "react/jsx-wrap-multilines": "error",
+    "react/jsx-closing-bracket-location": "error",
+    "react/sort-comp": "error",
+    "jsx-quotes": ["error", "prefer-double"]
+  }
 }
