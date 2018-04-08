@@ -8,5 +8,9 @@
     "react/jsx-closing-bracket-location": "error",
     "react/sort-comp": "error",
     "jsx-quotes": ["error", "prefer-double"]
-  }
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  },
 }
