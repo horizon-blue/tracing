@@ -1,9 +1,12 @@
 import React, { PureComponent } from 'react';
+import { connect } from 'react-redux';
 
 class Header extends PureComponent {
     render() {
-        return <div />;
+        return <div style={{ color: 'white' }}>{this.props.title}</div>;
     }
 }
 
-export default Header;
+const mapStateToProps = state => ({ title: state.get('test') });
+
+export default connect(mapStateToProps)(Header);
