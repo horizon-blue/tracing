@@ -10,6 +10,12 @@ const md = markdownIt({ html: true, typographer: true, xhtmlOut: true })
   .use(mk)
   .use(prism);
 
+/**
+ * The component that renders blog post content (Markdown string) into
+ * DOM nodes
+ *
+ * @class      BlogContent (name)
+ */
 class BlogContent extends PureComponent {
   static propTypes = {
     content: PropTypes.string.isRequired,

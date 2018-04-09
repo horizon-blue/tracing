@@ -3,6 +3,11 @@ import { Comment } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import Translated from 'views/Translated';
 
+/**
+ * The component that is used to display a single comment
+ *
+ * @class      CommentItem (name)
+ */
 class CommentItem extends PureComponent {
   static propTypes = {
     comment: PropTypes.object.isRequired,

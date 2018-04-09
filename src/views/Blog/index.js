@@ -4,6 +4,11 @@ import BlogList from './BlogList';
 import BlogPost from './BlogPost';
 import './index.css';
 
+/**
+ * The Blog Section.
+ *
+ * @class      Blog (name)
+ */
 class Blog extends PureComponent {
   render() {
     return (

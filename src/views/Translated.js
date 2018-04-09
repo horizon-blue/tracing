@@ -3,6 +3,12 @@ import PropTypes from 'prop-types';
 import Polyglot from 'node-polyglot';
 import { connect } from 'react-redux';
 
+/**
+ * A helper component that render translation with current locale setting from
+ * redux store
+ *
+ * @class      Translated (name)
+ */
 class Translated extends PureComponent {
   static propTypes = {
     as: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),

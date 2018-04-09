@@ -28,6 +28,11 @@ const comments = [
   },
 ];
 
+/**
+ * Display a list of comments as a comment section
+ *
+ * @class      Comments (name)
+ */
 class Comments extends PureComponent {
   static propTypes = {
     comments: PropTypes.array.isRequired,
@@ -37,6 +42,12 @@ class Comments extends PureComponent {
     comments: comments,
   };
 
+  /**
+   * Given a comment, render it as an entry in the comment list
+   *
+   * @param      {Object}  comment  The comment
+   * @return     {Node}  The DOM Node corresponds to the comment item
+   */
   renderCommentItem(comment) {
     return <CommentItem comment={comment} key={comment.id} />;
   }

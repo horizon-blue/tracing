@@ -84,6 +84,11 @@ print gradients $\\frac{\\partial out}{\\partial x}$
 `,
 };
 
+/**
+ * The content to show on blog post page (for each post)
+ *
+ * @class      BlogPost (name)
+ */
 class BlogPost extends PureComponent {
   static propTypes = {
     post: PropTypes.object.isRequired,
@@ -93,6 +98,12 @@ class BlogPost extends PureComponent {
     post,
   };
 
+  /**
+   * Render each tag as a DOM node
+   *
+   * @param      {String}  name    The name of the tag
+   * @return     {Node}  The Node corresponds to the tag
+   */
   renderTag(name) {
     return (
       <Label basic color="blue" horizontal key={name}>

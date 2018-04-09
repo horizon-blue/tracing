@@ -4,6 +4,11 @@ import Translated from 'views/Translated';
 import './index.css';
 import gear2 from './assets/gear2.svg';
 
+/**
+ * The Header that appears at the top of the website
+ *
+ * @class      Header (name)
+ */
 class Header extends PureComponent {
   render() {
     return (

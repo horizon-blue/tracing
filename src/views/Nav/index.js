@@ -7,8 +7,18 @@ import actions from 'actions';
 import Translated from 'views/Translated';
 import './index.css';
 
+/**
+ * A shorthand that combine link and translation into a single component
+ *
+ * @class      TranslatedNavLink (name)
+ */
 const TranslatedNavLink = props => <Translated as={Link} {...props} />;
 
+/**
+ * The Navigation bar that enable user to navigate across pages
+ *
+ * @class      Nav (name)
+ */
 class Nav extends PureComponent {
   static propTypes = {
     toggleLocale: PropTypes.func.isRequired,
@@ -19,7 +29,14 @@ class Nav extends PureComponent {
     fix: null,
   };
 
+  /**
+   * Cancel menu fixed property
+   */
   hideFixedMenu = () => this.setState({ fixed: null });
+
+  /**
+   * Fix the menu on top of the page
+   */
   showFixedMenu = () => this.setState({ fixed: 'top' });
 
   render() {

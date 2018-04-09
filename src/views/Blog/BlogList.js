@@ -38,6 +38,11 @@ const posts = [
   },
 ];
 
+/**
+ * The content to shows on the blog list page
+ *
+ * @class      BlogList (name)
+ */
 class BlogList extends PureComponent {
   static propTypes = {
     posts: PropTypes.array.isRequired,
@@ -47,6 +52,12 @@ class BlogList extends PureComponent {
     posts: posts,
   };
 
+  /**
+   * Given each post, render it as an entry in the blog list
+   *
+   * @param      {object}  post    The post
+   * @return     {Node}  the rendered React component
+   */
   renderPostItem(post) {
     return <BlogListItem key={post.id} post={post} />;
   }

@@ -4,11 +4,22 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Translated from 'views/Translated';
 
+/**
+ * Class for blog list item.
+ *
+ * @class      BlogListItem (name)
+ */
 class BlogListItem extends PureComponent {
   static propTypes = {
     post: PropTypes.object.isRequired,
   };
 
+  /**
+   * Render each tag as a DOM node
+   *
+   * @param      {String}  name    The name of the tag
+   * @return     {Node}  The Node corresponds to the tag
+   */
   renderTag(name) {
     return (
       <Label basic color="blue" horizontal key={name}>
