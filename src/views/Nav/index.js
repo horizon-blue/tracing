@@ -26,42 +26,50 @@ class Nav extends PureComponent {
     const activePath = this.props.location.pathname.split('/')[1];
 
     return (
-      <Visibility
-        as="nav"
-        once={false}
-        onTopPassed={this.showFixedMenu}
-        onTopPassedReverse={this.hideFixedMenu}
-      >
-        <Menu inverted pointing secondary size="large" fixed={this.state.fixed}>
-          <Container className="nav-menu">
-            <Menu.Item
-              as={TranslatedNavLink}
-              id="menuBlog"
-              to="/blog"
-              active={activePath === 'blog'}
-            />
-            <Menu.Item
-              as={TranslatedNavLink}
-              id="menuAbout"
-              to="/about"
-              active={activePath === 'about'}
-            />
-            <Menu.Menu position="right">
+      <nav>
+        <Visibility
+          once={false}
+          onTopPassed={this.showFixedMenu}
+          onTopPassedReverse={this.hideFixedMenu}
+        >
+          <Menu
+            inverted
+            pointing
+            secondary
+            size="large"
+            fixed={this.state.fixed}
+          >
+            <Container className="nav-menu">
               <Menu.Item
                 as={TranslatedNavLink}
-                id="menuLogin"
-                to="/login"
-                active={activePath === 'login'}
+                id="menuBlog"
+                to="/blog"
+                active={activePath === 'blog'}
               />
-              <Translated
-                as={Menu.Item}
-                id="menuOtherLanguage"
-                onClick={this.props.toggleLocale}
+              <Menu.Item
+                as={TranslatedNavLink}
+                id="menuAbout"
+                to="/about"
+                active={activePath === 'about'}
               />
-            </Menu.Menu>
-          </Container>
-        </Menu>
-      </Visibility>
+              <Menu.Menu position="right">
+                <Menu.Item
+                  as={TranslatedNavLink}
+                  id="menuLogin"
+                  to="/login"
+                  active={activePath === 'login'}
+                />
+                <Translated
+                  as={Menu.Item}
+                  id="menuOtherLanguage"
+                  onClick={this.props.toggleLocale}
+                />
+              </Menu.Menu>
+            </Container>
+          </Menu>
+        </Visibility>
+        {this.state.fixed && <Menu inverted pointing secondary size="large" />}
+      </nav>
     );
   }
 }
