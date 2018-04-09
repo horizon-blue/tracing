@@ -6,6 +6,7 @@
     }, ],
     "settings":
     {
-        "tab_size": 2
+        "tab_size": 2,
+         "rulers": [80]
     },
 }
