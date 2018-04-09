@@ -1,9 +1,11 @@
 {
-    "folders":
-    [
-        {
-            "path": "src",
-            "file_exclude_patterns": ["*.ai"],
-        },
-    ],
+    "folders": [
+    {
+        "path": "src",
+        "file_exclude_patterns": ["*.ai"],
+    }, ],
+    "settings":
+    {
+        "tab_size": 2
+    },
 }

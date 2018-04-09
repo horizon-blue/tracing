@@ -1,5 +1,4 @@
 import { combineReducers } from 'redux-immutable';
-import test from './test';
+import translator from './translator';
 
-export { default as initialState } from './initialState';
-export default combineReducers({ test });
+export default combineReducers({ translator });
