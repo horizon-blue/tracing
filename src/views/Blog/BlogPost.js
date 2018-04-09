@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { Container, Header, Icon } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
+import BlogContent from './BlogContent';
 
 // static data used for render test
 const post = {
@@ -11,13 +12,8 @@ const post = {
   },
   href: 'foo-bar',
   createdAt: '2017-06-26T23:20:11',
-  content: `
-      # This is a Markdown Test
-      See if you can render correctly
-
-      - this one
-      - and this one
-    `,
+  content:
+    '## This is a Markdown Test\n\nSee if this can be rendered correctly\n\n- this one\n\n- and this one\n\n<i>Try inline HTML</i>',
 };
 
 class BlogPost extends PureComponent {
@@ -47,7 +43,7 @@ class BlogPost extends PureComponent {
             {post.createdAt.slice(0, 10)}
           </span>
         </div>
-        <main>{post.content}</main>
+        <BlogContent content={post.content} />
       </Container>
     );
   }
