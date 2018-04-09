@@ -1,3 +1,10 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
+import { Container } from 'semantic-ui-react';
 
-export default () => <div>the post</div>;
+class BlogPost extends PureComponent {
+  render() {
+    return <Container as="main" />;
+  }
+}
+
+export default BlogPost;

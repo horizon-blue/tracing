@@ -1,0 +1,15 @@
+section.blog-list {
+  padding: 5vh 5vw;
+  border-bottom: 1px solid rgb(35, 36, 45);
+  transition: background-color 500ms ease-in, color 500ms ease-in;
+}
+
+section.blog-list:hover {
+  background-color: rgba(12, 96, 170, 0.3);
+  cursor: pointer;
+  cursor: hand;
+}
+
+section.blog-list .ui.basic.blue.label {
+  background-color: rgba(14, 42, 118, 0.4) !important;
+}
