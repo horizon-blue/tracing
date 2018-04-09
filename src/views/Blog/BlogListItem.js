@@ -48,7 +48,7 @@ class BlogListItem extends PureComponent {
             </Row>
             <Row>
               <Col>
-                <p>
+                <div>
                   <Translated
                     as="span"
                     id="blogPostedAt"
@@ -59,7 +59,7 @@ class BlogListItem extends PureComponent {
                   />
                   <span className="blog-meta-divider">|</span>
                   <i>{post.category}</i>
-                </p>
+                </div>
               </Col>
             </Row>
           </Grid>

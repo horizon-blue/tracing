@@ -32,3 +32,17 @@ section.blog-list summary {
 section.blog-list .blog-meta-divider {
   margin: 0 0.5rem;
 }
+
+article.blog-post {
+  padding-top: 3vh;
+  color: white;
+}
+
+article.blog-post .blog-post-meta {
+  margin-bottom: 2vh;
+  color: rgba(157, 204, 254, 0.8);
+}
+
+article.blog-post .blog-post-meta span:not(:first-child) {
+  margin-left: 1vw;
+}
