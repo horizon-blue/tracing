@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { Comment } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
+import Translated from 'views/Translated';
 
 class CommentItem extends PureComponent {
   static propTypes = {
@@ -22,7 +23,7 @@ class CommentItem extends PureComponent {
           </Comment.Metadata>
           <Comment.Text as="p">{comment.content}</Comment.Text>
           <Comment.Actions className="comment-action">
-            <Comment.Action>Reply</Comment.Action>
+            <Translated as={Comment.Action} id="reply" />
           </Comment.Actions>
         </Comment.Content>
       </Comment>

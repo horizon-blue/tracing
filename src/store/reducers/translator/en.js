@@ -14,5 +14,6 @@ export default new Polyglot({
     updatedAt: 'Last update',
     comments: 'Comments',
     blogPostedAt: '%{name} posted at %{date}',
+    reply: 'Reply',
   },
 });

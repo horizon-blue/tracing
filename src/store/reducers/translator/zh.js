@@ -14,5 +14,6 @@ export default new Polyglot({
     updatedAt: '最后更新',
     comments: '评论',
     blogPostedAt: '%{name} 发布于 %{date}',
+    reply: '回复',
   },
 });
