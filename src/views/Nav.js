@@ -2,17 +2,20 @@ import React, { PureComponent } from 'react';
 import { Menu, Container } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import actions from 'actions';
 import Translated from './Translated';
+
+const TranslatedNavLink = props => <Translated as={Link} {...props} />;
 
 class Nav extends PureComponent {
   static propTypes = {
     toggleLocale: PropTypes.func.isRequired,
   };
+
   state = {};
 
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name });
+  handleItemClick = (e, { id }) => this.setState({ activeItem: id });
 
   render() {
     const { activeItem } = this.state;
@@ -21,22 +24,20 @@ class Nav extends PureComponent {
       <Container as="nav">
         <Menu inverted pointing secondary size="large">
           <Menu.Item
-            name="blog"
-            as="span"
-            active={activeItem === 'blog'}
+            as={TranslatedNavLink}
+            active={activeItem === 'menuBlog'}
             onClick={this.handleItemClick}
-          >
-            <Translated id="menuBlog" as={Link} to="/blog" />
-          </Menu.Item>
+            id="menuBlog"
+            to="/blog"
+          />
           <Menu.Menu position="right">
             <Menu.Item
-              name="login"
-              as="span"
-              active={activeItem === 'login'}
+              as={TranslatedNavLink}
+              active={activeItem === 'menuLogin'}
               onClick={this.handleItemClick}
-            >
-              <Translated id="menuLogin" as={Link} to="/login" />
-            </Menu.Item>
+              id="menuLogin"
+              to="/login"
+            />
             <Translated
               as={Menu.Item}
               id="menuOtherLanguage"
@@ -56,4 +57,4 @@ const mapDispatchToProps = dispatch => ({
     }),
 });
 
-export default connect(null, mapDispatchToProps)(Nav);
+export default withRouter(connect(null, mapDispatchToProps)(Nav));

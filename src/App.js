@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { Header, Home, Nav } from './views';
+import { Header, Home, Nav, Blog } from './views';
 
 class App extends PureComponent {
   render() {
@@ -10,6 +10,7 @@ class App extends PureComponent {
         <Nav />
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route path="/blog" component={Blog} />
         </Switch>
       </div>
     );
