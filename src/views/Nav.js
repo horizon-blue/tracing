@@ -46,6 +46,13 @@ class Nav extends PureComponent {
                 id="menuBlog"
                 to="/blog"
               />
+              <Menu.Item
+                as={TranslatedNavLink}
+                active={activeItem === 'menuAbout'}
+                onClick={this.handleItemClick}
+                id="menuAbout"
+                to="/about"
+              />
               <Menu.Menu position="right">
                 <Menu.Item
                   as={TranslatedNavLink}

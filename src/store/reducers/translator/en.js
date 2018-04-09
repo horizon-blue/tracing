@@ -7,5 +7,7 @@ export default new Polyglot({
     menuBlog: 'Blog',
     menuOtherLanguage: '中文',
     menuLogin: 'Login',
+    menuLogout: 'Logout',
+    menuAbout: 'About',
   },
 });
