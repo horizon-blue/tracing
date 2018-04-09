@@ -10,6 +10,7 @@ import {
 import PropTypes from 'prop-types';
 import BlogContent from './BlogContent';
 import Translated from 'views/Translated';
+import Comments from './Comments';
 
 // static data used for render test
 const post = {
@@ -39,7 +40,7 @@ See if this can be *rendered* **correctly**
 
 <i style="color:orange;">I should be orange</i>
 
-<iframe width="560" height="315"
+<iframe width="300" height="200"
 src="https://www.youtube-nocookie.com/embed/ZXsQAXx_ao0?rel=0"
 frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
@@ -80,8 +81,6 @@ out.backward()
 \`\`\`
 
 print gradients $\\frac{\\partial out}{\\partial x}$
-
-...
 `,
 };
 
@@ -108,7 +107,7 @@ class BlogPost extends PureComponent {
     return (
       <Container as="article" className="blog-post">
         <Container text as="section" textAlign="center">
-          <Header as="h2" inverted>
+          <Header as="h1" inverted>
             {post.title}
           </Header>
           <div className="blog-post-meta">
@@ -140,6 +139,7 @@ class BlogPost extends PureComponent {
           </Grid>
         </Container>
         <Divider inverted />
+        <Comments />
       </Container>
     );
   }

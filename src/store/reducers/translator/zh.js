@@ -12,6 +12,7 @@ export default new Polyglot({
     tags: '标签',
     category: '分类',
     updatedAt: '最后更新',
+    comments: '评论',
     blogPostedAt: '%{name} 发布于 %{date}',
   },
 });

@@ -38,8 +38,16 @@ article.blog-post {
   color: white;
 }
 
-article.blog-post .blog-post-meta {
-  color: rgba(157, 204, 254, 0.8);
+article.blog-post h2,
+article.blog-post p,
+article.blog-post .comment-username {
+  color: white !important;
+}
+
+article.blog-post .blog-post-meta,
+article.blog-post .comment-meta,
+article.blog-post .comment-action a {
+  color: rgba(157, 204, 254, 0.8) !important;
 }
 
 article.blog-post .blog-post-meta span:not(:first-child) {
@@ -48,4 +56,14 @@ article.blog-post .blog-post-meta span:not(:first-child) {
 
 article.blog-post main {
   margin: 2vh 0 5vh 0;
+}
+
+article.blog-post .comment-container {
+  margin-bottom: 1vh !important;
+  padding: 1vh 1vh !important;
+  transition: background-color 500ms ease-in, color 500ms ease-in;
+}
+
+article.blog-post .comment-container:hover {
+  background-color: rgba(12, 96, 170, 0.3);
 }

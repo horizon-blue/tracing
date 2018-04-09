@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react';
 import { Container } from 'semantic-ui-react';
-import { List } from 'immutable';
 import PropTypes from 'prop-types';
 import BlogListItem from './BlogListItem';
 
@@ -41,11 +40,11 @@ const posts = [
 
 class BlogList extends PureComponent {
   static propTypes = {
-    posts: PropTypes.instanceOf(List),
+    posts: PropTypes.array.isRequired,
   };
 
   static defaultProps = {
-    posts: List(posts),
+    posts: posts,
   };
 
   renderPostItem(post) {

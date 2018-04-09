@@ -12,6 +12,7 @@ export default new Polyglot({
     tags: 'Tags',
     category: 'Category',
     updatedAt: 'Last update',
+    comments: 'Comments',
     blogPostedAt: '%{name} posted at %{date}',
   },
 });
