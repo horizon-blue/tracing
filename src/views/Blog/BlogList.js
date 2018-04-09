@@ -15,7 +15,10 @@ const posts = [
     href: 'foo-bar',
     excerpt: 'This is an excerpt',
     tags: ['test', '标签'],
-    category: 'journal',
+    category: {
+      name: 'journal',
+      href: 'journal',
+    },
     createdAt: '2017-06-26T23:20:11',
   },
   {
@@ -28,7 +31,10 @@ const posts = [
       'something to test. The quick brown fox jumps over the lazy dog the quick brown fox jumps over the lazy dog.',
     tags: ['test'],
     href: 'the-test',
-    category: 'journal',
+    category: {
+      name: 'journal',
+      href: 'journal',
+    },
     createdAt: '2018-01-04T22:18:25Z',
   },
 ];

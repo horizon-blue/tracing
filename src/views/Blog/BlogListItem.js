@@ -4,8 +4,6 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Translated from 'views/Translated';
 
-const { Row, Column: Col } = Grid;
-
 class BlogListItem extends PureComponent {
   static propTypes = {
     post: PropTypes.object.isRequired,
@@ -23,31 +21,31 @@ class BlogListItem extends PureComponent {
     const { post } = this.props;
 
     return (
-      <Link to={`/blog/${post.href}`}>
+      <Link to={`/blog/${post.category.href}/${post.href}`}>
         <Container as="section" className="blog-list">
           <Grid inverted>
-            <Row>
-              <Col computer={12} mobile={16}>
+            <Grid.Row>
+              <Grid.Column computer={12} mobile={16}>
                 <Header inverted as="h2">
                   {post.title}
                 </Header>
-              </Col>
-              <Col
+              </Grid.Column>
+              <Grid.Column
                 computer={4}
                 mobile={16}
                 floated="right"
                 className="tag-container"
               >
                 {post.tags.map(this.renderTag)}
-              </Col>
-            </Row>
-            <Row>
-              <Col>
+              </Grid.Column>
+            </Grid.Row>
+            <Grid.Row>
+              <Grid.Column>
                 <summary>{post.excerpt}</summary>
-              </Col>
-            </Row>
-            <Row>
-              <Col>
+              </Grid.Column>
+            </Grid.Row>
+            <Grid.Row>
+              <Grid.Column>
                 <div>
                   <Translated
                     as="span"
@@ -58,10 +56,10 @@ class BlogListItem extends PureComponent {
                     }}
                   />
                   <span className="blog-meta-divider">|</span>
-                  <i>{post.category}</i>
+                  <i>{post.category.name}</i>
                 </div>
-              </Col>
-            </Row>
+              </Grid.Column>
+            </Grid.Row>
           </Grid>
         </Container>
       </Link>

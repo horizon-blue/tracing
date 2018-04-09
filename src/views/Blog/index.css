@@ -8,7 +8,7 @@ section.blog-list:hover {
   background-color: rgba(12, 96, 170, 0.3);
 }
 
-section.blog-list .ui.basic.blue.label {
+.ui.basic.blue.label {
   background-color: rgba(14, 42, 118, 0.4) !important;
   font-size: 0.9em;
 }
@@ -39,10 +39,13 @@ article.blog-post {
 }
 
 article.blog-post .blog-post-meta {
-  margin-bottom: 2vh;
   color: rgba(157, 204, 254, 0.8);
 }
 
 article.blog-post .blog-post-meta span:not(:first-child) {
   margin-left: 1vw;
+}
+
+article.blog-post main {
+  margin: 2vh 0 5vh 0;
 }

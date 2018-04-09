@@ -9,6 +9,9 @@ export default new Polyglot({
     menuLogin: 'Login',
     menuLogout: 'Logout',
     menuAbout: 'About',
+    tags: 'Tags',
+    category: 'Category',
+    updatedAt: 'Last update',
     blogPostedAt: '%{name} posted at %{date}',
   },
 });
