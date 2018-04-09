@@ -12,8 +12,62 @@ const post = {
   },
   href: 'foo-bar',
   createdAt: '2017-06-26T23:20:11',
-  content:
-    '## This is a Markdown Test\n\nSee if this can be rendered correctly\n\n- this one\n\n- and this one\n\n<i>Try inline HTML</i>',
+  content: `
+## This is a Markdown Test
+
+See if this can be *rendered* **correctly**
+
+- This one
+- And This one
+
+![test img](/favicon.png)
+
+### Inline HTML
+
+<i style="color:orange;">I should be orange</i>
+
+<iframe width="560" height="315"
+src="https://www.youtube-nocookie.com/embed/ZXsQAXx_ao0?rel=0"
+frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+### LaTeX
+
+$$\\frac{1}{N}\\sum_{n=1}^{N}e^{n}$$
+
+### Code Block
+
+\`\`\`python
+import antigravity
+
+print("Hello, world")
+\`\`\`
+
+\`\`\`jsx
+import React, { PureComponent } from 'react';
+\`\`\`
+
+## Jupyter Notebook
+
+I didn't find any good Jupyter Notebook rendering library.
+However, exporting Jupyter Notebook as Markdown works fairly
+weel and renders properly.
+
+e.g.
+
+Gradients
+---------
+let's backprop now
+\`\`out.backward()\`\` is equivalent to doing \`\`out.backward(torch.Tensor([1.0]))\`\`
+
+
+
+
+\`\`\`python
+out.backward()
+\`\`\`
+
+print gradients d(out)/dx
+  `,
 };
 
 class BlogPost extends PureComponent {
