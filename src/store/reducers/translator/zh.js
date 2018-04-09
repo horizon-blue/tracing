@@ -9,5 +9,6 @@ export default new Polyglot({
     menuLogin: '登录',
     menuLogout: '登出',
     menuAbout: '关于',
+    blogPostedAt: '%{name} 发布于 %{date}',
   },
 });

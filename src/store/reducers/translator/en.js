@@ -9,5 +9,6 @@ export default new Polyglot({
     menuLogin: 'Login',
     menuLogout: 'Logout',
     menuAbout: 'About',
+    blogPostedAt: '%{name} posted at %{date}',
   },
 });

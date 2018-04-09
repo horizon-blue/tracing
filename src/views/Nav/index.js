@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link, withRouter } from 'react-router-dom';
 import actions from 'actions';
-import Translated from '../Translated';
+import Translated from 'views/Translated';
 import './index.css';
 
 const TranslatedNavLink = props => <Translated as={Link} {...props} />;
@@ -33,7 +33,7 @@ class Nav extends PureComponent {
         onTopPassedReverse={this.hideFixedMenu}
       >
         <Menu inverted pointing secondary size="large" fixed={this.state.fixed}>
-          <Container>
+          <Container className="nav-menu">
             <Menu.Item
               as={TranslatedNavLink}
               id="menuBlog"

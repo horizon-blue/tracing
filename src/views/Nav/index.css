@@ -2,3 +2,7 @@ nav .ui.secondary.inverted.pointing.menu .active.item {
   border-color: rgb(67, 137, 245) !important;
   color: rgb(79, 158, 249) !important;
 }
+
+nav .nav-menu {
+  border-bottom: 1px solid rgb(35, 36, 45);
+}
