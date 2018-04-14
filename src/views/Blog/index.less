@@ -1,0 +1,66 @@
+section.blog-list {
+  padding: 5vh 5vw;
+  border-bottom: 1px solid rgb(35, 36, 45);
+  transition: background-color 500ms ease-in, color 500ms ease-in;
+
+  &:hover {
+    background-color: rgba(12, 96, 170, 0.3);
+  }
+
+  .tag-container {
+    margin-top: 1rem !important;
+    @media (min-width: 992px) {
+      text-align: right;
+      margin-top: 0 !important;
+    }
+  }
+
+  summary {
+    color: rgba(157, 204, 254, 0.8);
+    font-size: 1.1em;
+  }
+
+  .blog-meta-divider {
+    margin: 0 0.5rem;
+  }
+}
+
+.ui.basic.blue.label {
+  background-color: rgba(14, 42, 118, 0.4) !important;
+  font-size: 0.9em;
+}
+
+article.blog-post {
+  padding-top: 3vh;
+  color: white;
+
+  h2,
+  p,
+  .comment-username {
+    color: white !important;
+  }
+
+  .blog-post-meta,
+  .comment-meta,
+  .comment-action a {
+    color: rgba(157, 204, 254, 0.8) !important;
+  }
+
+  .blog-post-meta span:not(:first-child) {
+    margin-left: 1vw;
+  }
+
+  main {
+    margin: 2vh 0 5vh 0;
+  }
+
+  .comment-container {
+    margin-bottom: 1vh !important;
+    padding: 1vh 1vh !important;
+    transition: background-color 500ms ease-in, color 500ms ease-in;
+
+    &:hover {
+      background-color: rgba(12, 96, 170, 0.3);
+    }
+  }
+}

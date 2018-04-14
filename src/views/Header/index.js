@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import { Header as SemHeader, Container } from 'semantic-ui-react';
 import Translated from 'views/Translated';
-import './index.css';
+import './index.less';
 import gear2 from './assets/gear2.svg';
 
 /**

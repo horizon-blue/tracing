@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { Link, withRouter } from 'react-router-dom';
 import actions from 'actions';
 import Translated from 'views/Translated';
-import './index.css';
+import './index.less';
 
 /**
  * A shorthand that combine link and translation into a single component
