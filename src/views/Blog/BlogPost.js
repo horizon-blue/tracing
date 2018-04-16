@@ -82,7 +82,7 @@ class BlogPost extends PureComponent {
           </Grid>
         </Container>
         <Divider inverted />
-        <Comments />
+        <Comments comments={post.comments.edges} />
       </Container>
     );
   }
@@ -112,6 +112,20 @@ const getPost = gql`
       publishDate
       lastUpdateDate
       content
+      comments {
+        edges {
+          node {
+            id
+            author {
+              id
+              name
+              avatar
+            }
+            createDate
+            content
+          }
+        }
+      }
     }
   }
 `;

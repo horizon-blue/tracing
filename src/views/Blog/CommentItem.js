@@ -24,7 +24,7 @@ class CommentItem extends PureComponent {
             {comment.author.name}
           </Comment.Author>
           <Comment.Metadata as="div" className="comment-meta">
-            {comment.createdAt.slice(0, 10)}
+            {comment.createDate.slice(0, 10)}
           </Comment.Metadata>
           <Comment.Text as="p">{comment.content}</Comment.Text>
           <Comment.Actions className="comment-action">

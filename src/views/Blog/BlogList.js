@@ -49,7 +49,6 @@ const getAllPosts = gql`
         node {
           id
           title
-          href
           excerpt
           category {
             id

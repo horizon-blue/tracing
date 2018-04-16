@@ -15,9 +15,6 @@ class Post(Base):
     publishDate = Column(DateTime)
     lastUpdateDate = Column(DateTime, nullable=False, default=datetime.datetime.utcnow)
 
-    # generate hyper-ref using title by default
-    href = Column(Text, unique=True, nullable=False,
-                  default=lambda context: context.current_parameters.get('title').replace(' ', '-'))
     title = Column(Text, nullable=False)
     excerpt = Column(Text)
     content = Column(Text, nullable=False)

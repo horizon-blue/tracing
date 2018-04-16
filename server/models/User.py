@@ -1,5 +1,5 @@
 import datetime
-from sqlalchemy import Column, Integer, Text, DateTime, Boolean
+from sqlalchemy import Column, Integer, Text, DateTime, Boolean, String
 from sqlalchemy.orm import relationship
 from database import Base
 
@@ -13,6 +13,7 @@ class User(Base):
     name = Column(Text, nullable=False, unique=True)
     createdDate = Column(DateTime, default=datetime.datetime.utcnow, nullable=False)
     isAdmin = Column(Boolean, nullable=False, default=False)
+    avatar = Column(String)
 
     # relationships
     posts = relationship("Post", back_populates="author")
