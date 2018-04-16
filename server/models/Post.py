@@ -6,7 +6,10 @@ from .Tag import tagIdentifier
 
 
 class Post(Base):
-    __tablename__ = "posts"
+    """
+    The SQLAlchemy model for Post class
+    """
+    __tablename__ = "post"
 
     id = Column(Integer, primary_key=True)
     publishDate = Column(DateTime)
@@ -20,10 +23,11 @@ class Post(Base):
     content = Column(Text, nullable=False)
 
     # relationships
-    authorId = Column(Integer, ForeignKey('users.id'))
+    authorId = Column(Integer, ForeignKey('user.id'))
     author = relationship("User", back_populates="posts")
     tags = relationship(
         "Tag", secondary=tagIdentifier, back_populates="posts")
+    comments = relationship("Comment", back_populates="post")
 
     def __repr__(self):
         return '<Post %r by %r>' % (self.title, self.author)

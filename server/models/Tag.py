@@ -4,14 +4,17 @@ from database import Base
 
 # many to many relationship
 tagIdentifier = Table('tagIdentifier', Base.metadata,
-                      Column('postId', Integer, ForeignKey('posts.id')),
-                      Column('tagId', Integer, ForeignKey('tags.id')),
+                      Column('postId', Integer, ForeignKey('post.id')),
+                      Column('tagId', Integer, ForeignKey('tag.id')),
                       PrimaryKeyConstraint('postId', 'tagId'),
                       )
 
 
 class Tag(Base):
-    __tablename__ = 'tags'
+    """
+    The SQLAlchemy model for Tag class
+    """
+    __tablename__ = 'tag'
     id = Column(Integer, primary_key=True)
     name = Column(Text, nullable=False, unique=True)
     description = Column(Text)
