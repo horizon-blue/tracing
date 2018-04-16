@@ -1,5 +1,5 @@
 import models
-from graphene import relay, ObjectType, Field, Schema
+from graphene import relay, ObjectType, Schema
 from graphene_sqlalchemy import SQLAlchemyConnectionField, SQLAlchemyObjectType
 
 
@@ -13,7 +13,7 @@ class Post(SQLAlchemyObjectType):
     class Meta:
         model = models.Post
         interfaces = (relay.Node,)
-        exclude_fields = ["authorId"]
+        exclude_fields = ["authorId", "categoryId"]
 
 
 class Tag(SQLAlchemyObjectType):
@@ -38,9 +38,10 @@ class Query(ObjectType):
     node = relay.Node.Field()
     users = SQLAlchemyConnectionField(User)
     posts = SQLAlchemyConnectionField(Post)
-    post = Field(Post)
     tags = SQLAlchemyConnectionField(Tag)
     categories = SQLAlchemyConnectionField(Category)
+
+    post = relay.Node.Field(Post)
 
 
 schema = Schema(query=Query, types=[User, Post, Tag, Comment, Category])
