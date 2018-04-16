@@ -8,35 +8,17 @@ exports[`renders correctly 1`] = `
     <img
       alt="gear icon"
       className="header-logo clockwise"
-      src="gear1.svg"
+      src="gear2.svg"
       style={
         Object {
           "filter": "
-                hue-rotate(358deg)
-                brightness(70%)
-                saturate(126%)
-                opacity(97%)
+                hue-rotate(360deg)
+                brightness(85%)
+                saturate(115%)
+                opacity(95%)
               ",
-          "height": "35vh",
+          "height": "40vh",
           "left": "0%",
-          "top": "36%",
-        }
-      }
-    />
-    <img
-      alt="gear icon"
-      className="header-logo counter-clockwise"
-      src="gear1.svg"
-      style={
-        Object {
-          "filter": "
-                hue-rotate(361deg)
-                brightness(76%)
-                saturate(113%)
-                opacity(98%)
-              ",
-          "height": "46vh",
-          "left": "9%",
           "top": "0%",
         }
       }
@@ -48,13 +30,13 @@ exports[`renders correctly 1`] = `
       style={
         Object {
           "filter": "
-                hue-rotate(363deg)
-                brightness(99%)
-                saturate(116%)
-                opacity(99%)
+                hue-rotate(360deg)
+                brightness(85%)
+                saturate(115%)
+                opacity(95%)
               ",
-          "height": "39vh",
-          "left": "18%",
+          "height": "40vh",
+          "left": "9%",
           "top": "9%",
         }
       }
@@ -62,53 +44,17 @@ exports[`renders correctly 1`] = `
     <img
       alt="gear icon"
       className="header-logo clockwise"
-      src="gear1.svg"
-      style={
-        Object {
-          "filter": "
-                hue-rotate(358deg)
-                brightness(95%)
-                saturate(123%)
-                opacity(90%)
-              ",
-          "height": "43vh",
-          "left": "27%",
-          "top": "27%",
-        }
-      }
-    />
-    <img
-      alt="gear icon"
-      className="header-logo counter-clockwise"
-      src="gear1.svg"
-      style={
-        Object {
-          "filter": "
-                hue-rotate(357deg)
-                brightness(91%)
-                saturate(111%)
-                opacity(92%)
-              ",
-          "height": "48vh",
-          "left": "36%",
-          "top": "54%",
-        }
-      }
-    />
-    <img
-      alt="gear icon"
-      className="header-logo counter-clockwise"
       src="gear2.svg"
       style={
         Object {
           "filter": "
-                hue-rotate(359deg)
-                brightness(99%)
-                saturate(128%)
-                opacity(90%)
+                hue-rotate(360deg)
+                brightness(85%)
+                saturate(115%)
+                opacity(95%)
               ",
-          "height": "32vh",
-          "left": "45%",
+          "height": "40vh",
+          "left": "18%",
           "top": "18%",
         }
       }
@@ -116,35 +62,53 @@ exports[`renders correctly 1`] = `
     <img
       alt="gear icon"
       className="header-logo clockwise"
-      src="gear1.svg"
+      src="gear2.svg"
       style={
         Object {
           "filter": "
-                hue-rotate(358deg)
-                brightness(86%)
-                saturate(100%)
-                opacity(92%)
+                hue-rotate(360deg)
+                brightness(85%)
+                saturate(115%)
+                opacity(95%)
               ",
-          "height": "41vh",
-          "left": "54%",
-          "top": "81%",
+          "height": "40vh",
+          "left": "27%",
+          "top": "27%",
         }
       }
     />
     <img
       alt="gear icon"
       className="header-logo clockwise"
-      src="gear1.svg"
+      src="gear2.svg"
       style={
         Object {
           "filter": "
-                hue-rotate(362deg)
-                brightness(70%)
+                hue-rotate(360deg)
+                brightness(85%)
                 saturate(115%)
-                opacity(97%)
+                opacity(95%)
               ",
-          "height": "32vh",
-          "left": "63%",
+          "height": "40vh",
+          "left": "36%",
+          "top": "36%",
+        }
+      }
+    />
+    <img
+      alt="gear icon"
+      className="header-logo clockwise"
+      src="gear2.svg"
+      style={
+        Object {
+          "filter": "
+                hue-rotate(360deg)
+                brightness(85%)
+                saturate(115%)
+                opacity(95%)
+              ",
+          "height": "40vh",
+          "left": "45%",
           "top": "45%",
         }
       }
@@ -152,16 +116,52 @@ exports[`renders correctly 1`] = `
     <img
       alt="gear icon"
       className="header-logo clockwise"
-      src="gear1.svg"
+      src="gear2.svg"
       style={
         Object {
           "filter": "
-                hue-rotate(357deg)
-                brightness(99%)
-                saturate(100%)
-                opacity(97%)
+                hue-rotate(360deg)
+                brightness(85%)
+                saturate(115%)
+                opacity(95%)
               ",
-          "height": "37vh",
+          "height": "40vh",
+          "left": "54%",
+          "top": "54%",
+        }
+      }
+    />
+    <img
+      alt="gear icon"
+      className="header-logo clockwise"
+      src="gear2.svg"
+      style={
+        Object {
+          "filter": "
+                hue-rotate(360deg)
+                brightness(85%)
+                saturate(115%)
+                opacity(95%)
+              ",
+          "height": "40vh",
+          "left": "63%",
+          "top": "63%",
+        }
+      }
+    />
+    <img
+      alt="gear icon"
+      className="header-logo clockwise"
+      src="gear2.svg"
+      style={
+        Object {
+          "filter": "
+                hue-rotate(360deg)
+                brightness(85%)
+                saturate(115%)
+                opacity(95%)
+              ",
+          "height": "40vh",
           "left": "72%",
           "top": "72%",
         }
@@ -174,14 +174,14 @@ exports[`renders correctly 1`] = `
       style={
         Object {
           "filter": "
-                hue-rotate(358deg)
-                brightness(78%)
-                saturate(126%)
-                opacity(99%)
+                hue-rotate(360deg)
+                brightness(85%)
+                saturate(115%)
+                opacity(95%)
               ",
-          "height": "31vh",
+          "height": "40vh",
           "left": "81%",
-          "top": "63%",
+          "top": "81%",
         }
       }
     />

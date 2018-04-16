@@ -1,0 +1,158 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render with content 1`] = `
+<main
+  className="ui container"
+>
+  <a
+    href="/blog/post/1234"
+    onClick={[Function]}
+  >
+    <section
+      className="ui container blog-list"
+    >
+      <div
+        className="ui inverted grid"
+      >
+        <div
+          className="row"
+        >
+          <div
+            className="twelve wide computer sixteen wide mobile column"
+          >
+            <h2
+              className="ui inverted header"
+            >
+              Foo Bar
+            </h2>
+          </div>
+          <div
+            className="right floated four wide computer sixteen wide mobile column tag-container"
+          >
+            <div
+              className="ui blue basic horizontal label"
+              onClick={[Function]}
+            >
+              标签
+            </div>
+          </div>
+        </div>
+        <div
+          className="row"
+        >
+          <div
+            className="column"
+          >
+            <summary>
+              This is an excerpt
+            </summary>
+          </div>
+        </div>
+        <div
+          className="row"
+        >
+          <div
+            className="column"
+          >
+            <div>
+              <span
+                dispatch={undefined}
+              >
+                Xiaoyan posted at 2017-06-26
+              </span>
+              <span
+                className="blog-meta-divider"
+              >
+                |
+              </span>
+              <i>
+                journal
+              </i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </a>
+  <a
+    href="/blog/post/124"
+    onClick={[Function]}
+  >
+    <section
+      className="ui container blog-list"
+    >
+      <div
+        className="ui inverted grid"
+      >
+        <div
+          className="row"
+        >
+          <div
+            className="twelve wide computer sixteen wide mobile column"
+          >
+            <h2
+              className="ui inverted header"
+            >
+              测试
+            </h2>
+          </div>
+          <div
+            className="right floated four wide computer sixteen wide mobile column tag-container"
+          >
+            <div
+              className="ui blue basic horizontal label"
+              onClick={[Function]}
+            >
+              test
+            </div>
+          </div>
+        </div>
+        <div
+          className="row"
+        >
+          <div
+            className="column"
+          >
+            <summary>
+              something to test. The quick brown fox jumps over the lazy dog the quick brown fox jumps over the lazy dog.
+            </summary>
+          </div>
+        </div>
+        <div
+          className="row"
+        >
+          <div
+            className="column"
+          >
+            <div>
+              <span
+                dispatch={undefined}
+              >
+                Xiaoyan posted at 2018-01-04
+              </span>
+              <span
+                className="blog-meta-divider"
+              >
+                |
+              </span>
+              <i>
+                journal
+              </i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </a>
+</main>
+`;
+
+exports[`renders loading 1`] = `
+<main
+  className="ui container"
+>
+  <div
+    className="ui big active inverted centered inline loader"
+  />
+</main>
+`;

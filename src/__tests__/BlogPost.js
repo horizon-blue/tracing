@@ -98,3 +98,10 @@ it('render with content', () => {
     .toJSON();
   expect(tree).toMatchSnapshot();
 });
+
+it('render with error', () => {
+  const tree = renderer
+    .create(<BlogPostView data={{ loading: false, error: 'Network error' }} />)
+    .toJSON();
+  expect(tree).toMatchSnapshot();
+});

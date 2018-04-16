@@ -149,6 +149,12 @@ exports[`render with content 1`] = `
 </article>
 `;
 
+exports[`render with error 1`] = `
+<div>
+  Network error
+</div>
+`;
+
 exports[`renders loading 1`] = `
 <div
   className="ui big active inverted centered inline loader"

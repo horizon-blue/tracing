@@ -73,4 +73,5 @@ const getAllPosts = gql`
   }
 `;
 
+export { BlogList as BlogListView };
 export default graphql(getAllPosts)(BlogList);
