@@ -1,3 +1,7 @@
+import os
+
+os.environ["__TEST__"] = "1"
+
 from snapshottest import TestCase
 from database import db_session, init_db, Base, engine
 from graphene.test import Client

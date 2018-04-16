@@ -12,7 +12,7 @@ import PropTypes from 'prop-types';
 import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
 import BlogContent from './BlogContent';
-import Translated from 'views/Translated';
+import Translated from '../Translated';
 import Comments from './Comments';
 
 /**

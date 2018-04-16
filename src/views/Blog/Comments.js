@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import { Comment, Container, Header } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import Translated from 'views/Translated';
+import Translated from '../Translated';
 import CommentItem from './CommentItem';
 
 const H2Header = props => <Header as="h2" {...props} />;

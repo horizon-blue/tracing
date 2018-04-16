@@ -1,6 +1,6 @@
 import en from './en';
 import zh from './zh';
-import actions from 'actions';
+import actions from '../../../actions';
 
 export default (state = en, action) => {
   switch (action.type) {

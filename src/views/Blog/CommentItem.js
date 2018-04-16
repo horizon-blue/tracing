@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import { Comment } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import Translated from 'views/Translated';
+import Translated from '../Translated';
 
 /**
  * The component that is used to display a single comment

@@ -3,8 +3,8 @@ import { Menu, Container, Visibility } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link, withRouter } from 'react-router-dom';
-import actions from 'actions';
-import Translated from 'views/Translated';
+import actions from '../../actions';
+import Translated from '../Translated';
 import './index.less';
 
 /**

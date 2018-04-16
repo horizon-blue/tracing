@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { Container, Grid, Header, Label } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import Translated from 'views/Translated';
+import Translated from '../Translated';
 
 /**
  * Class for blog list item.
