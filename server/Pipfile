@@ -9,6 +9,7 @@ sqlalchemy = "*"
 graphene = ">=2.0"
 graphene-sqlalchemy = ">=2.0"
 flask-graphql = "*"
+flask-cors = "*"
 
 [dev-packages]
 
