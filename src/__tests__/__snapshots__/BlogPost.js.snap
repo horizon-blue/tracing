@@ -1,0 +1,156 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render with content 1`] = `
+<article
+  className="ui container blog-post"
+>
+  <section
+    className="ui text center aligned container"
+  >
+    <h1
+      className="ui inverted header"
+    >
+      Foo Bar
+    </h1>
+    <div
+      className="blog-post-meta"
+    >
+      <span>
+        <i
+          aria-hidden="true"
+          className="user outline icon"
+        />
+        Xiaoyan
+      </span>
+      <span>
+        <i
+          aria-hidden="true"
+          className="calendar outline icon"
+        />
+        2017-06-26
+      </span>
+    </div>
+  </section>
+  <div
+    className="ui text left aligned container"
+  >
+    <main
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<h2>This is a Markdown Test</h2>
+        <p>See if this can be <em>rendered</em> <strong>correctly</strong></p>
+        <ul>
+        <li>This one</li>
+        <li>And This one</li>
+        </ul>
+        <p><img src=\\"/favicon.png\\" alt=\\"test img\\" /></p>
+        <h3>Inline HTML</h3>
+        <p><i style=\\"color:orange;\\">I should be orange</i></p>
+        <iframe width=\\"300\\" height=\\"200\\"
+        src=\\"https://www.youtube-nocookie.com/embed/ZXsQAXx_ao0?rel=0\\"
+        frameborder=\\"0\\" allow=\\"autoplay; encrypted-media\\" allowfullscreen></iframe>
+        <h3>LaTeX</h3>
+        <p><span class=\\"katex-display\\"><span class=\\"katex\\"><span class=\\"katex-mathml\\"><math><semantics><mrow><mfrac><mrow><mn>1</mn></mrow><mrow><mi>N</mi></mrow></mfrac><msubsup><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mrow><mi>N</mi></mrow></msubsup><msup><mi>e</mi><mrow><mi>n</mi></mrow></msup></mrow><annotation encoding=\\"application/x-tex\\">\\\\frac{1}{N}\\\\sum_{n=1}^{N}e^{n}
+        </annotation></semantics></math></span><span class=\\"katex-html\\" aria-hidden=\\"true\\"><span class=\\"strut\\" style=\\"height:1.8283360000000002em;\\"></span><span class=\\"strut bottom\\" style=\\"height:3.0954490000000003em;vertical-align:-1.267113em;\\"></span><span class=\\"base displaystyle textstyle uncramped\\"><span class=\\"mord reset-textstyle displaystyle textstyle uncramped\\"><span class=\\"sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter\\"></span><span class=\\"mfrac\\"><span class=\\"vlist\\"><span style=\\"top:0.686em;\\"><span class=\\"fontsize-ensurer reset-size5 size5\\"><span style=\\"font-size:0em;\\">​</span></span><span class=\\"reset-textstyle textstyle cramped\\"><span class=\\"mord textstyle cramped\\"><span class=\\"mord mathit\\" style=\\"margin-right:0.10903em;\\">N</span></span></span></span><span style=\\"top:-0.22999999999999998em;\\"><span class=\\"fontsize-ensurer reset-size5 size5\\"><span style=\\"font-size:0em;\\">​</span></span><span class=\\"reset-textstyle textstyle uncramped frac-line\\"></span></span><span style=\\"top:-0.677em;\\"><span class=\\"fontsize-ensurer reset-size5 size5\\"><span style=\\"font-size:0em;\\">​</span></span><span class=\\"reset-textstyle textstyle uncramped\\"><span class=\\"mord textstyle uncramped\\"><span class=\\"mord mathrm\\">1</span></span></span></span><span class=\\"baseline-fix\\"><span class=\\"fontsize-ensurer reset-size5 size5\\"><span style=\\"font-size:0em;\\">​</span></span>​</span></span></span><span class=\\"sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter\\"></span></span><span class=\\"mop op-limits\\"><span class=\\"vlist\\"><span style=\\"top:1.1671129999999998em;margin-left:0em;\\"><span class=\\"fontsize-ensurer reset-size5 size5\\"><span style=\\"font-size:0em;\\">​</span></span><span class=\\"reset-textstyle scriptstyle cramped\\"><span class=\\"mord scriptstyle cramped\\"><span class=\\"mord mathit\\">n</span><span class=\\"mrel\\">=</span><span class=\\"mord mathrm\\">1</span></span></span></span><span style=\\"top:-0.000005000000000143778em;\\"><span class=\\"fontsize-ensurer reset-size5 size5\\"><span style=\\"font-size:0em;\\">​</span></span><span><span class=\\"op-symbol large-op mop\\">∑</span></span></span><span style=\\"top:-1.2500050000000003em;margin-left:0em;\\"><span class=\\"fontsize-ensurer reset-size5 size5\\"><span style=\\"font-size:0em;\\">​</span></span><span class=\\"reset-textstyle scriptstyle uncramped\\"><span class=\\"mord scriptstyle uncramped\\"><span class=\\"mord mathit\\" style=\\"margin-right:0.10903em;\\">N</span></span></span></span><span class=\\"baseline-fix\\"><span class=\\"fontsize-ensurer reset-size5 size5\\"><span style=\\"font-size:0em;\\">​</span></span>​</span></span></span><span class=\\"mord\\"><span class=\\"mord mathit\\">e</span><span class=\\"vlist\\"><span style=\\"top:-0.413em;margin-right:0.05em;\\"><span class=\\"fontsize-ensurer reset-size5 size5\\"><span style=\\"font-size:0em;\\">​</span></span><span class=\\"reset-textstyle scriptstyle uncramped\\"><span class=\\"mord scriptstyle uncramped\\"><span class=\\"mord mathit\\">n</span></span></span></span><span class=\\"baseline-fix\\"><span class=\\"fontsize-ensurer reset-size5 size5\\"><span style=\\"font-size:0em;\\">​</span></span>​</span></span></span></span></span></span></span></p>
+        <h3>Code Block</h3>
+        <pre class=\\"language-python\\"><code class=\\"language-python\\"><span class=\\"token keyword\\">import</span> antigravity
+        
+        <span class=\\"token keyword\\">print</span><span class=\\"token punctuation\\">(</span><span class=\\"token string\\">\\"Hello, world\\"</span><span class=\\"token punctuation\\">)</span>
+        </code></pre>
+        <pre class=\\"language-jsx\\"><code class=\\"language-jsx\\"><span class=\\"token keyword\\">import</span> React<span class=\\"token punctuation\\">,</span> <span class=\\"token punctuation\\">{</span> PureComponent <span class=\\"token punctuation\\">}</span> <span class=\\"token keyword\\">from</span> <span class=\\"token string\\">'react'</span><span class=\\"token punctuation\\">;</span>
+        </code></pre>
+        <h2>Jupyter Notebook</h2>
+        <p>I didn’t find any good Jupyter Notebook rendering library.
+        However, exporting Jupyter Notebook as Markdown works fairly
+        weel and renders properly.</p>
+        <p>e.g.</p>
+        <h2>Gradients</h2>
+        <p>let’s backprop now
+        <code>out.backward()</code> is equivalent to doing <code>out.backward(torch.Tensor([1.0]))</code></p>
+        <pre class=\\"language-python\\"><code class=\\"language-python\\">out<span class=\\"token punctuation\\">.</span>backward<span class=\\"token punctuation\\">(</span><span class=\\"token punctuation\\">)</span>
+        </code></pre>
+        <p>print gradients <span class=\\"katex\\"><span class=\\"katex-mathml\\"><math><semantics><mrow><mfrac><mrow><mi mathvariant=\\"normal\\">∂</mi><mi>o</mi><mi>u</mi><mi>t</mi></mrow><mrow><mi mathvariant=\\"normal\\">∂</mi><mi>x</mi></mrow></mfrac></mrow><annotation encoding=\\"application/x-tex\\">\\\\frac{\\\\partial out}{\\\\partial x}</annotation></semantics></math></span><span class=\\"katex-html\\" aria-hidden=\\"true\\"><span class=\\"strut\\" style=\\"height:0.8801079999999999em;\\"></span><span class=\\"strut bottom\\" style=\\"height:1.2251079999999999em;vertical-align:-0.345em;\\"></span><span class=\\"base textstyle uncramped\\"><span class=\\"mord reset-textstyle textstyle uncramped\\"><span class=\\"sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter\\"></span><span class=\\"mfrac\\"><span class=\\"vlist\\"><span style=\\"top:0.345em;\\"><span class=\\"fontsize-ensurer reset-size5 size5\\"><span style=\\"font-size:0em;\\">​</span></span><span class=\\"reset-textstyle scriptstyle cramped\\"><span class=\\"mord scriptstyle cramped\\"><span class=\\"mord mathrm\\" style=\\"margin-right:0.05556em;\\">∂</span><span class=\\"mord mathit\\">x</span></span></span></span><span style=\\"top:-0.22999999999999998em;\\"><span class=\\"fontsize-ensurer reset-size5 size5\\"><span style=\\"font-size:0em;\\">​</span></span><span class=\\"reset-textstyle textstyle uncramped frac-line\\"></span></span><span style=\\"top:-0.394em;\\"><span class=\\"fontsize-ensurer reset-size5 size5\\"><span style=\\"font-size:0em;\\">​</span></span><span class=\\"reset-textstyle scriptstyle uncramped\\"><span class=\\"mord scriptstyle uncramped\\"><span class=\\"mord mathrm\\" style=\\"margin-right:0.05556em;\\">∂</span><span class=\\"mord mathit\\">o</span><span class=\\"mord mathit\\">u</span><span class=\\"mord mathit\\">t</span></span></span></span><span class=\\"baseline-fix\\"><span class=\\"fontsize-ensurer reset-size5 size5\\"><span style=\\"font-size:0em;\\">​</span></span>​</span></span></span><span class=\\"sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter\\"></span></span></span></span></span></p>
+        ",
+        }
+      }
+    />
+  </div>
+  <div
+    className="ui inverted divider"
+  />
+  <section
+    className="ui container"
+  >
+    <div
+      className="ui inverted divided padded equal width grid"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="column"
+        >
+          <span
+            dispatch={undefined}
+          >
+            Tags
+          </span>
+          : 
+          <div
+            className="ui blue basic horizontal label"
+            onClick={[Function]}
+          >
+            Test
+          </div>
+        </div>
+        <div
+          className="column"
+        >
+          <span
+            dispatch={undefined}
+          >
+            Category
+          </span>
+          : 
+          journal
+        </div>
+        <div
+          className="column"
+        >
+          <span
+            dispatch={undefined}
+          >
+            Last update
+          </span>
+          :
+           
+          2017-08-23
+        </div>
+      </div>
+    </div>
+  </section>
+  <div
+    className="ui inverted divider"
+  />
+  <div
+    className="ui text container blog-comments"
+  >
+    <div
+      className="ui large comments"
+    >
+      <h2
+        className="ui dividing header"
+        dispatch={undefined}
+      >
+        Comments
+      </h2>
+    </div>
+  </div>
+</article>
+`;
+
+exports[`renders loading 1`] = `
+<div
+  className="ui big active inverted centered inline loader"
+/>
+`;

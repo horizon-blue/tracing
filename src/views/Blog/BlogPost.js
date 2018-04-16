@@ -130,6 +130,8 @@ const getPost = gql`
   }
 `;
 
+export { BlogPost as BlogPostView };
+
 export default graphql(getPost, {
   options: ({ match }) => ({ variables: match.params }),
 })(BlogPost);

@@ -1,0 +1,238 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div>
+  <header
+    className="ui center aligned container"
+  >
+    <img
+      alt="gear icon"
+      className="header-logo clockwise"
+      src="gear1.svg"
+      style={
+        Object {
+          "filter": "
+                hue-rotate(358deg)
+                brightness(70%)
+                saturate(126%)
+                opacity(97%)
+              ",
+          "height": "35vh",
+          "left": "0%",
+          "top": "36%",
+        }
+      }
+    />
+    <img
+      alt="gear icon"
+      className="header-logo counter-clockwise"
+      src="gear1.svg"
+      style={
+        Object {
+          "filter": "
+                hue-rotate(361deg)
+                brightness(76%)
+                saturate(113%)
+                opacity(98%)
+              ",
+          "height": "46vh",
+          "left": "9%",
+          "top": "0%",
+        }
+      }
+    />
+    <img
+      alt="gear icon"
+      className="header-logo clockwise"
+      src="gear2.svg"
+      style={
+        Object {
+          "filter": "
+                hue-rotate(363deg)
+                brightness(99%)
+                saturate(116%)
+                opacity(99%)
+              ",
+          "height": "39vh",
+          "left": "18%",
+          "top": "9%",
+        }
+      }
+    />
+    <img
+      alt="gear icon"
+      className="header-logo clockwise"
+      src="gear1.svg"
+      style={
+        Object {
+          "filter": "
+                hue-rotate(358deg)
+                brightness(95%)
+                saturate(123%)
+                opacity(90%)
+              ",
+          "height": "43vh",
+          "left": "27%",
+          "top": "27%",
+        }
+      }
+    />
+    <img
+      alt="gear icon"
+      className="header-logo counter-clockwise"
+      src="gear1.svg"
+      style={
+        Object {
+          "filter": "
+                hue-rotate(357deg)
+                brightness(91%)
+                saturate(111%)
+                opacity(92%)
+              ",
+          "height": "48vh",
+          "left": "36%",
+          "top": "54%",
+        }
+      }
+    />
+    <img
+      alt="gear icon"
+      className="header-logo counter-clockwise"
+      src="gear2.svg"
+      style={
+        Object {
+          "filter": "
+                hue-rotate(359deg)
+                brightness(99%)
+                saturate(128%)
+                opacity(90%)
+              ",
+          "height": "32vh",
+          "left": "45%",
+          "top": "18%",
+        }
+      }
+    />
+    <img
+      alt="gear icon"
+      className="header-logo clockwise"
+      src="gear1.svg"
+      style={
+        Object {
+          "filter": "
+                hue-rotate(358deg)
+                brightness(86%)
+                saturate(100%)
+                opacity(92%)
+              ",
+          "height": "41vh",
+          "left": "54%",
+          "top": "81%",
+        }
+      }
+    />
+    <img
+      alt="gear icon"
+      className="header-logo clockwise"
+      src="gear1.svg"
+      style={
+        Object {
+          "filter": "
+                hue-rotate(362deg)
+                brightness(70%)
+                saturate(115%)
+                opacity(97%)
+              ",
+          "height": "32vh",
+          "left": "63%",
+          "top": "45%",
+        }
+      }
+    />
+    <img
+      alt="gear icon"
+      className="header-logo clockwise"
+      src="gear1.svg"
+      style={
+        Object {
+          "filter": "
+                hue-rotate(357deg)
+                brightness(99%)
+                saturate(100%)
+                opacity(97%)
+              ",
+          "height": "37vh",
+          "left": "72%",
+          "top": "72%",
+        }
+      }
+    />
+    <img
+      alt="gear icon"
+      className="header-logo clockwise"
+      src="gear2.svg"
+      style={
+        Object {
+          "filter": "
+                hue-rotate(358deg)
+                brightness(78%)
+                saturate(126%)
+                opacity(99%)
+              ",
+          "height": "31vh",
+          "left": "81%",
+          "top": "63%",
+        }
+      }
+    />
+  </header>
+  <nav>
+    <div>
+      <div
+        className="ui large inverted pointing secondary menu"
+      >
+        <div
+          className="ui container nav-menu"
+        >
+          <a
+            className="item"
+            dispatch={undefined}
+            href="/blog"
+            onClick={[Function]}
+          >
+            Blog
+          </a>
+          <a
+            className="item"
+            dispatch={undefined}
+            href="/about"
+            onClick={[Function]}
+          >
+            About
+          </a>
+          <div
+            className="right menu"
+          >
+            <a
+              className="item"
+              dispatch={undefined}
+              href="/login"
+              onClick={[Function]}
+            >
+              Login
+            </a>
+            <a
+              className="item"
+              dispatch={undefined}
+              onClick={[Function]}
+            >
+              中文
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div />
+</div>
+`;
