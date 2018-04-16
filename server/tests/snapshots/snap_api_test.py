@@ -100,7 +100,6 @@ snapshots['TestAPI::test_post_comment 1'] = {
                                 'id': 'VXNlcjox',
                                 'name': 'Foo'
                             },
-                            'createDate': '2018-04-16T20:11:53.033511',
                             'id': 'Q29tbWVudDox'
                         }
                     }

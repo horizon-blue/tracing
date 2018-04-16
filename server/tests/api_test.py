@@ -41,4 +41,4 @@ class TestAPI(TestCase):
     def test_post_comment(self):
         self.assertMatchSnapshot(
             self.client.execute(
-                """{ post(id: "UG9zdDox") { id title content comments { edges { node {  id author {id name} createDate }}}}}"""))
+                """{ post(id: "UG9zdDox") { id title content comments { edges { node {  id author {id name} }}}}}"""))
