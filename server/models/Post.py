@@ -25,9 +25,10 @@ class Post(Base):
     # relationships
     authorId = Column(Integer, ForeignKey('user.id'))
     author = relationship("User", back_populates="posts")
-    tags = relationship(
-        "Tag", secondary=tagIdentifier, back_populates="posts")
+    tags = relationship("Tag", secondary=tagIdentifier, back_populates="posts")
     comments = relationship("Comment", back_populates="post")
+    categoryId = Column(Integer, ForeignKey('category.id'))
+    category = relationship("Category", back_populates="posts")
 
     def __repr__(self):
         return '<Post %r by %r>' % (self.title, self.author)

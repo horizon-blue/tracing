@@ -6,6 +6,9 @@ name = "pypi"
 [packages]
 flask = "*"
 sqlalchemy = "*"
+graphene = ">=2.0"
+graphene-sqlalchemy = ">=2.0"
+flask-graphql = "*"
 
 [dev-packages]
 
