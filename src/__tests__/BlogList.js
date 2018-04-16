@@ -27,7 +27,6 @@ const posts = {
         },
         category: {
           name: 'journal',
-          href: 'journal',
         },
         publishDate: '2017-06-26T23:20:11',
       },
@@ -46,7 +45,6 @@ const posts = {
         },
         category: {
           name: 'journal',
-          href: 'journal',
         },
         publishDate: '2018-01-04T22:18:25Z',
       },
