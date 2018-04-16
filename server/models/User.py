@@ -1,0 +1,21 @@
+import datetime
+from sqlalchemy import Column, Integer, Text, DateTime, Boolean
+from sqlalchemy.orm import relationship
+from database import Base
+
+
+class User(Base):
+    """
+    The SQLAlchemy model for User class
+    """
+    __tablename__ = "users"
+    id = Column(Integer, primary_key=True)
+    name = Column(Text, nullable=False, unique=True)
+    createdDate = Column(DateTime, default=datetime.datetime.utcnow, nullable=False)
+    isAdmin = Column(Boolean, nullable=False, default=False)
+
+    # relationships
+    posts = relationship("Post", back_populates="author")
+
+    def __repr__(self):
+        return '<User %r>' % self.name
