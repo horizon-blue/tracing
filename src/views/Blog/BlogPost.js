@@ -6,83 +6,14 @@ import {
   Divider,
   Label,
   Grid,
+  Loader,
 } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
+import gql from 'graphql-tag';
+import { graphql } from 'react-apollo';
 import BlogContent from './BlogContent';
 import Translated from 'views/Translated';
 import Comments from './Comments';
-
-// static data used for render test
-const post = {
-  id: 1234,
-  title: 'Foo Bar',
-  author: {
-    name: 'Xiaoyan',
-  },
-  href: 'foo-bar',
-  createdAt: '2017-06-26T23:20:11',
-  updatedAt: '2017-08-23T10:20:11',
-  tags: ['test', '标签'],
-  category: {
-    name: 'journal',
-  },
-  content: `
-## This is a Markdown Test
-
-See if this can be *rendered* **correctly**
-
-- This one
-- And This one
-
-![test img](/favicon.png)
-
-### Inline HTML
-
-<i style="color:orange;">I should be orange</i>
-
-<iframe width="300" height="200"
-src="https://www.youtube-nocookie.com/embed/ZXsQAXx_ao0?rel=0"
-frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
-### LaTeX
-
-$$\\frac{1}{N}\\sum_{n=1}^{N}e^{n}$$
-
-### Code Block
-
-\`\`\`python
-import antigravity
-
-print("Hello, world")
-\`\`\`
-
-\`\`\`jsx
-import React, { PureComponent } from 'react';
-\`\`\`
-
-## Jupyter Notebook
-
-I didn't find any good Jupyter Notebook rendering library.
-However, exporting Jupyter Notebook as Markdown works fairly
-weel and renders properly.
-
-e.g.
-
-Gradients
----------
-let's backprop now
-\`\`out.backward()\`\` is equivalent to doing \`\`out.backward(torch.Tensor([1.0]))\`\`
-
-
-
-
-\`\`\`python
-out.backward()
-\`\`\`
-
-print gradients $\\frac{\\partial out}{\\partial x}$
-`,
-};
 
 /**
  * The content to show on blog post page (for each post)
@@ -91,11 +22,7 @@ print gradients $\\frac{\\partial out}{\\partial x}$
  */
 class BlogPost extends PureComponent {
   static propTypes = {
-    post: PropTypes.object.isRequired,
-  };
-
-  static defaultProps = {
-    post,
+    data: PropTypes.object.isRequired,
   };
 
   /**
@@ -104,18 +31,22 @@ class BlogPost extends PureComponent {
    * @param      {String}  name    The name of the tag
    * @return     {Node}  The Node corresponds to the tag
    */
-  renderTag(name) {
+  renderTag({ node: tag }) {
     return (
-      <Label basic color="blue" horizontal key={name}>
-        {name}
+      <Label basic color="blue" horizontal key={tag.id}>
+        {tag.name}
       </Label>
     );
   }
 
   render() {
-    const { post } = this.props;
+    const { data: { loading, error, post } } = this.props;
 
-    return (
+    return loading ? (
+      <Loader inline="centered" size="big" inverted active={loading} />
+    ) : error ? (
+      <div>{error}</div>
+    ) : (
       <Container as="article" className="blog-post">
         <Container text as="section" textAlign="center">
           <Header as="h1" inverted>
@@ -128,7 +59,7 @@ class BlogPost extends PureComponent {
             </span>
             <span>
               <Icon name="calendar outline" />
-              {post.createdAt.slice(0, 10)}
+              {post.publishDate.slice(0, 10)}
             </span>
           </div>
         </Container>
@@ -138,13 +69,14 @@ class BlogPost extends PureComponent {
           <Grid inverted divided padded columns="equal">
             <Grid.Row>
               <Grid.Column>
-                <Translated id="tags" />: {post.tags.map(this.renderTag)}
+                <Translated id="tags" />: {post.tags.edges.map(this.renderTag)}
               </Grid.Column>
               <Grid.Column>
                 <Translated id="category" />: {post.category.name}
               </Grid.Column>
               <Grid.Column>
-                <Translated id="updatedAt" />: {post.updatedAt.slice(0, 10)}
+                <Translated id="updatedAt" />:{' '}
+                {post.lastUpdateDate.slice(0, 10)}
               </Grid.Column>
             </Grid.Row>
           </Grid>
@@ -156,4 +88,34 @@ class BlogPost extends PureComponent {
   }
 }
 
-export default BlogPost;
+const getPost = gql`
+  query($postId: ID!) {
+    post(id: $postId) {
+      id
+      title
+      category {
+        id
+        name
+      }
+      tags {
+        edges {
+          node {
+            id
+            name
+          }
+        }
+      }
+      author {
+        id
+        name
+      }
+      publishDate
+      lastUpdateDate
+      content
+    }
+  }
+`;
+
+export default graphql(getPost, {
+  options: ({ match }) => ({ variables: match.params }),
+})(BlogPost);

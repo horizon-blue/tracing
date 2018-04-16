@@ -31,7 +31,7 @@ class BlogList extends PureComponent {
     return (
       <Container as="main">
         {loading ? (
-          <Loader inline inverted active={loading} />
+          <Loader inline="centered" size="big" inverted active={loading} />
         ) : error ? (
           <div>{error}</div>
         ) : (
