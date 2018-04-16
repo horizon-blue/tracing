@@ -20,10 +20,10 @@ class BlogListItem extends PureComponent {
    * @param      {String}  name    The name of the tag
    * @return     {Node}  The Node corresponds to the tag
    */
-  renderTag(name) {
+  renderTag({ node: tag }) {
     return (
-      <Label basic color="blue" horizontal key={name}>
-        {name}
+      <Label basic color="blue" horizontal key={tag.id}>
+        {tag.name}
       </Label>
     );
   }
@@ -32,7 +32,7 @@ class BlogListItem extends PureComponent {
     const { post } = this.props;
 
     return (
-      <Link to={`/blog/${post.category.href}/${post.href}`}>
+      <Link to={`/blog/${post.category.name}/${post.href}`}>
         <Container as="section" className="blog-list">
           <Grid inverted>
             <Grid.Row>
@@ -47,7 +47,7 @@ class BlogListItem extends PureComponent {
                 floated="right"
                 className="tag-container"
               >
-                {post.tags.map(this.renderTag)}
+                {post.tags.edges.map(this.renderTag)}
               </Grid.Column>
             </Grid.Row>
             <Grid.Row>
@@ -63,7 +63,7 @@ class BlogListItem extends PureComponent {
                     id="blogPostedAt"
                     variables={{
                       name: post.author.name,
-                      date: post.createdAt.slice(0, 10),
+                      date: post.publishDate.slice(0, 10),
                     }}
                   />
                   <span className="blog-meta-divider">|</span>
