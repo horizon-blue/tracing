@@ -1,3 +1,4 @@
+import os
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import scoped_session, sessionmaker
@@ -5,7 +6,9 @@ from secrets import DATABASE_ADDRESS
 
 # http://flask.pocoo.org/docs/0.12/patterns/sqlalchemy/
 
-engine = create_engine(DATABASE_ADDRESS, convert_unicode=True)
+database_address = "sqlite:///:memory:" if os.environ.get("__TEST__") else DATABASE_ADDRESS
+
+engine = create_engine(database_address, convert_unicode=True)
 db_session = scoped_session(sessionmaker(autocommit=False,
                                          autoflush=False,
                                          bind=engine))

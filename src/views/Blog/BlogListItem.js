@@ -32,7 +32,7 @@ class BlogListItem extends PureComponent {
     const { post } = this.props;
 
     return (
-      <Link to={`/blog/${post.id}`}>
+      <Link to={`/blog/post/${post.id}`}>
         <Container as="section" className="blog-list">
           <Grid inverted>
             <Grid.Row>

@@ -14,7 +14,7 @@ class Blog extends PureComponent {
     return (
       <Switch>
         <Route exact path="/blog" component={BlogList} />
-        <Route path="/blog/:postId" component={BlogPost} />
+        <Route path="/blog/post/:postId" component={BlogPost} />
       </Switch>
     );
   }

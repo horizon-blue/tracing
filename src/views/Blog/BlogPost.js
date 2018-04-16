@@ -44,7 +44,7 @@ class BlogPost extends PureComponent {
 
     return loading ? (
       <Loader inline="centered" size="big" inverted active={loading} />
-    ) : error ? (
+    ) : !post ? (
       <div>{error}</div>
     ) : (
       <Container as="article" className="blog-post">
