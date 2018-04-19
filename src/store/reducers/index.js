@@ -1,4 +1,4 @@
 import { combineReducers } from 'redux-immutable';
-import translator from './translator';
+import locale from './locale';
 
-export default combineReducers({ translator });
+export default combineReducers({ locale });

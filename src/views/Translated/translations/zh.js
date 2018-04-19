@@ -1,8 +1,4 @@
-import Polyglot from 'node-polyglot';
-
-export default new Polyglot({
-  locale: 'zh',
-  phrases: {
+export default {
     header: '~ 这是一个标题 ~',
     menuBlog: '博客',
     menuOtherLanguage: 'English',
@@ -15,5 +11,4 @@ export default new Polyglot({
     comments: '评论',
     blogPostedAt: '%{name} 发布于 %{date}',
     reply: '回复',
-  },
-});
+};

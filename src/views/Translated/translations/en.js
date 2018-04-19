@@ -1,8 +1,4 @@
-import Polyglot from 'node-polyglot';
-
-export default new Polyglot({
-  locale: 'en',
-  phrases: {
+export default {
     header: '~ This is a placeholder for Header ~',
     menuBlog: 'Blog',
     menuOtherLanguage: '中文',
@@ -15,5 +11,4 @@ export default new Polyglot({
     comments: 'Comments',
     blogPostedAt: '%{name} posted at %{date}',
     reply: 'Reply',
-  },
-});
+};

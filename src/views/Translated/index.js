@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Polyglot from 'node-polyglot';
 import { connect } from 'react-redux';
+import translations from './translations';
 
 /**
  * A helper component that render translation with current locale setting from
@@ -25,12 +26,15 @@ class Translated extends PureComponent {
   render() {
     const {
       id,
-      translator,
+      locale,
       as: RenderElement,
       variables,
       defaultMessage,
       ...otherProps
     } = this.props;
+
+    const translator =
+      locale in translations ? translations[locale] : translations['en'];
 
     return (
       <RenderElement {...otherProps} dispatch={undefined}>
@@ -40,6 +44,6 @@ class Translated extends PureComponent {
   }
 }
 
-const mapStateToProps = state => ({ translator: state.get('translator') });
+const mapStateToProps = state => ({ locale: state.get('locale') });
 
 export default connect(mapStateToProps)(Translated);
