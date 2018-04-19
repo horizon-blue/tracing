@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import { Container, Grid, Header, Label } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import moment from 'moment';
 import Translated from '../Translated';
 
 /**
@@ -63,7 +64,10 @@ class BlogListItem extends PureComponent {
                     id="blogPostedAt"
                     variables={{
                       name: post.author.name,
-                      date: post.publishDate.slice(0, 10),
+                      date: moment
+                        .utc(post.publishDate)
+                        .local()
+                        .format('l'),
                     }}
                   />
                   <span className="blog-meta-divider">|</span>

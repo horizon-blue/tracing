@@ -9,6 +9,7 @@ import {
   Loader,
 } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
+import moment from 'moment';
 import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
 import BlogContent from './BlogContent';
@@ -59,7 +60,10 @@ class BlogPost extends PureComponent {
             </span>
             <span>
               <Icon name="calendar outline" />
-              {post.publishDate.slice(0, 10)}
+              {moment
+                .utc(post.publishDate)
+                .local()
+                .format('l')}
             </span>
           </div>
         </Container>
@@ -76,7 +80,10 @@ class BlogPost extends PureComponent {
               </Grid.Column>
               <Grid.Column>
                 <Translated id="updatedAt" />:{' '}
-                {post.lastUpdateDate.slice(0, 10)}
+                {moment
+                  .utc(post.lastUpdateDate)
+                  .local()
+                  .format('l')}
               </Grid.Column>
             </Grid.Row>
           </Grid>

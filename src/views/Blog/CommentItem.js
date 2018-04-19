@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { Comment } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
+import moment from 'moment';
 import Translated from '../Translated';
 
 /**
@@ -24,7 +25,10 @@ class CommentItem extends PureComponent {
             {comment.author.name}
           </Comment.Author>
           <Comment.Metadata as="div" className="comment-meta">
-            {comment.createDate.slice(0, 10)}
+            {moment
+              .utc(comment.createDate)
+              .local()
+              .format('l')}
           </Comment.Metadata>
           <Comment.Text as="p">{comment.content}</Comment.Text>
           <Comment.Actions className="comment-action">
