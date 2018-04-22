@@ -1,9 +1,11 @@
 import React, { PureComponent } from 'react';
-import { Container, Loader } from 'semantic-ui-react';
+import { Container } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import BlogListItem from './BlogListItem';
 import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
+import Loading from '../Loading';
+import ErrorMessage from '../ErrorMessage';
 
 /**
  * The content to shows on the blog list page
@@ -28,16 +30,12 @@ class BlogList extends PureComponent {
   render() {
     const { data: { loading, posts, error } } = this.props;
 
+    if (loading) return <Loading />;
+
+    if (error) return <ErrorMessage value={error} />;
+
     return (
-      <Container as="main">
-        {loading ? (
-          <Loader inline="centered" size="big" inverted active={loading} />
-        ) : error ? (
-          <div>{error}</div>
-        ) : (
-          posts.edges.map(this.renderPostItem)
-        )}
-      </Container>
+      <Container as="main">{posts.edges.map(this.renderPostItem)}</Container>
     );
   }
 }

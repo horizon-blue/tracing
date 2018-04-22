@@ -6,8 +6,8 @@ import {
   Divider,
   Label,
   Grid,
-  Loader,
 } from 'semantic-ui-react';
+import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import gql from 'graphql-tag';
@@ -15,6 +15,8 @@ import { graphql } from 'react-apollo';
 import BlogContent from './BlogContent';
 import Translated from '../Translated';
 import Comments from './Comments';
+import Loading from '../Loading';
+import ErrorMessage from '../ErrorMessage';
 
 /**
  * The content to show on blog post page (for each post)
@@ -43,11 +45,13 @@ class BlogPost extends PureComponent {
   render() {
     const { data: { loading, error, post } } = this.props;
 
-    return loading ? (
-      <Loader inline="centered" size="big" inverted active={loading} />
-    ) : !post ? (
-      <div>{error}</div>
-    ) : (
+    if (loading) return <Loading />;
+
+    if (error) return <ErrorMessage value={error} />;
+
+    if (!post) return <Redirect to="/blog" />;
+
+    return (
       <Container as="article" className="blog-post">
         <Container text as="section" textAlign="center">
           <Header as="h1" inverted>
