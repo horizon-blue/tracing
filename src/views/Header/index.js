@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react';
-import { Container } from 'semantic-ui-react';
 // import Translated from 'views/Translated';
 import { Range } from 'immutable';
 import './index.less';
@@ -17,7 +16,7 @@ const gears = [gear1, gear2];
 const randInt = (min, max) =>
   min + Math.floor(Math.random() * Math.floor(max - min));
 
-const GEAR_IDXS = Range(0, 10);
+const GEAR_IDXS = Range(0, randInt(10, 13));
 const GEAR_IDXS_SHUFFLED = GEAR_IDXS.sortBy(Math.random);
 const BACKGROUND = GEAR_IDXS.map(idx => (
   <img
@@ -29,9 +28,9 @@ const BACKGROUND = GEAR_IDXS.map(idx => (
       randInt(0, 2) ? 'clockwise' : 'counter-clockwise',
     ].join(' ')}
     style={{
-      height: randInt(30, 50) + 'vh',
-      left: 90 * idx / GEAR_IDXS.size + '%',
-      top: 90 * GEAR_IDXS_SHUFFLED.get(idx) / GEAR_IDXS.size + '%',
+      height: randInt(27, 50) + 'vh',
+      left: 5 + 75 * idx / GEAR_IDXS.size + '%',
+      top: 5 + 75 * GEAR_IDXS_SHUFFLED.get(idx) / GEAR_IDXS.size + '%',
       filter: `
         hue-rotate(${randInt(355, 365)}deg)
         brightness(${randInt(70, 100)}%)
@@ -49,11 +48,7 @@ const BACKGROUND = GEAR_IDXS.map(idx => (
  */
 class Header extends PureComponent {
   render() {
-    return (
-      <Container as="header" textAlign="center">
-        {BACKGROUND}
-      </Container>
-    );
+    return <header>{BACKGROUND}</header>;
   }
 }
 

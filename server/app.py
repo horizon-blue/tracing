@@ -8,7 +8,8 @@ app = Flask(__name__)
 CORS(app, resources=r'/graphql')
 
 # Add graphql endpoint
-app.add_url_rule('/graphql', view_func=GraphQLView.as_view('graphql', schema=schema, graphiql=True))
+app.add_url_rule(
+    '/graphql', view_func=GraphQLView.as_view('graphql', schema=schema, graphiql=True))
 
 
 @app.teardown_appcontext
@@ -18,4 +19,4 @@ def shutdown_session(exception=None):
 
 if __name__ == "__main__":
     init_db()
-    app.run(port=2333, debug=True)
+    app.run(port=2333, debug=False)
