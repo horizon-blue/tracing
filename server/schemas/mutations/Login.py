@@ -35,9 +35,16 @@ class Login(Mutation):
     token = String()
 
     def mutate(self, info, name, password):
+        """
+        Generate the token for the specific user, if exist
+        :param info: context object
+        :param name: name of user
+        :param password: password of user
+        :return: token string, if found, or raise error
+        """
         user = User.get_query(info).filter_by(name=name).first()
         if user and user.password == password:
             token = generate_token(user)
             return Login(token=token)
         else:
-            raise GraphQLError("User not found")
+            raise GraphQLError("Incorrect credentials")

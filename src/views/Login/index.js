@@ -1,9 +1,17 @@
 import React, { PureComponent } from 'react';
 import { Container, Form } from 'semantic-ui-react';
+import gql from 'graphql-tag';
+import { graphql } from 'react-apollo';
+import PropTypes from 'prop-types';
+import ErrorMessage from '../ErrorMessage';
 import Translated from '../Translated';
 import './index.less';
 
 class Login extends PureComponent {
+  static propTypes = {
+    mutate: PropTypes.func.isRequired,
+  };
+
   state = {
     name: '',
     password: '',
@@ -17,8 +25,17 @@ class Login extends PureComponent {
   handleChange = ({ target: { name, value } }) =>
     this.setState({ [name]: value });
 
-  render() {
+  handleLogin = () => {
     const { name, password } = this.state;
+
+    this.props
+      .mutate({ variables: { name, password } })
+      .then(({ data: { login: token } }) => console.log(token))
+      .catch(error => this.setState({ error }));
+  };
+
+  render() {
+    const { name, password, error } = this.state;
 
     return (
       <Container text as="main" textAlign="center">
@@ -45,11 +62,21 @@ class Login extends PureComponent {
             color="blue"
             type="submit"
             id="login"
+            onClick={this.handleLogin}
           />
         </Form>
+        {!!error && <ErrorMessage value={error} />}
       </Container>
     );
   }
 }
 
-export default Login;
+const loginMutation = gql`
+  mutation($name: String!, $password: String!) {
+    login(name: $name, password: $password) {
+      token
+    }
+  }
+`;
+
+export default graphql(loginMutation)(Login);
