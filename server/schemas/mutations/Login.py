@@ -28,6 +28,10 @@ def generate_token(user):
 
 
 class Login(Mutation):
+    """
+    Given the name and password, generate a token for the user
+    """
+
     class Arguments:
         name = String(required=True)
         password = String(required=True)
