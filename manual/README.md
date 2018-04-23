@@ -37,6 +37,24 @@ At the bottom of each post, user should see a section that shows the tags of the
 
 In addition, there will be a comment section at the very bottom that shows a list of comment that other users have on the post.
 
+## Login
+
+After clicking the `Login` button on the navigation bar, the user should see the login page, where he or she can enter the login credentials.
+
+![Login page](./img/login.png)
+
+## Account
+
+The account page should display the basic information about the user and allows the user to log out. Currently it is empty, but more information will be add later on
+
+![Account](./img/logout.png)
+
+### Editor
+
+If the user is admin, he or she can see and post new content using the post editor, which is located at `/account/editor`
+
+![Editor](./img/editor.png)
+
 ## Miscellaneous
 
 ### Switching Language
