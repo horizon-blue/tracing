@@ -23,6 +23,7 @@ class Nav extends PureComponent {
   static propTypes = {
     toggleLocale: PropTypes.func.isRequired,
     location: PropTypes.object.isRequired,
+    token: PropTypes.string,
   };
 
   state = {
@@ -40,7 +41,9 @@ class Nav extends PureComponent {
   showFixedMenu = () => this.setState({ fixed: 'top' });
 
   render() {
-    const activePath = this.props.location.pathname.split('/')[1];
+    const { token, location } = this.props;
+
+    const activePath = location.pathname.split('/')[1];
 
     return (
       <nav>
@@ -72,9 +75,9 @@ class Nav extends PureComponent {
               <Menu.Menu position="right">
                 <Menu.Item
                   as={TranslatedNavLink}
-                  id="menuLogin"
-                  to="/login"
-                  active={activePath === 'login'}
+                  id={token ? 'menuAccount' : 'menuLogin'}
+                  to={token ? '/account' : '/login'}
+                  active={activePath === (token ? 'account' : 'login')}
                 />
                 <Translated
                   as={Menu.Item}
@@ -91,6 +94,8 @@ class Nav extends PureComponent {
   }
 }
 
+const mapStateToProps = state => ({ token: state.get('token') });
+
 const mapDispatchToProps = dispatch => ({
   toggleLocale: () =>
     dispatch({
@@ -98,4 +103,4 @@ const mapDispatchToProps = dispatch => ({
     }),
 });
 
-export default withRouter(connect(null, mapDispatchToProps)(Nav));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Nav));

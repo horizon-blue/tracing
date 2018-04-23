@@ -2,14 +2,20 @@ import React, { PureComponent } from 'react';
 import { Container, Form } from 'semantic-ui-react';
 import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
+import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import ErrorMessage from '../ErrorMessage';
 import Translated from '../Translated';
+import actions from '../../actions';
 import './index.less';
 
 class Login extends PureComponent {
   static propTypes = {
     mutate: PropTypes.func.isRequired,
+    setToken: PropTypes.func.isRequired,
+    token: PropTypes.string,
+    history: PropTypes.object.isRequired,
   };
 
   state = {
@@ -27,14 +33,17 @@ class Login extends PureComponent {
 
   handleLogin = () => {
     const { name, password } = this.state;
+    const { setToken } = this.props;
 
     this.props
       .mutate({ variables: { name, password } })
-      .then(({ data: { login: token } }) => console.log(token))
+      .then(({ data: { login: { token } } }) => setToken(token))
       .catch(error => this.setState({ error }));
   };
 
   render() {
+    if (this.props.token) return <Redirect to="/" />;
+
     const { name, password, error } = this.state;
 
     return (
@@ -79,4 +88,16 @@ const loginMutation = gql`
   }
 `;
 
-export default graphql(loginMutation)(Login);
+const mapStateToProps = state => ({ token: state.get('token') });
+
+const mapDispatchToProps = dispatch => ({
+  setToken: token =>
+    dispatch({
+      type: actions.SET_TOKEN,
+      token,
+    }),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(
+  graphql(loginMutation)(Login)
+);
