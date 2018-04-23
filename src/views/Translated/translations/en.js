@@ -15,4 +15,7 @@ export default {
     password: 'Password',
     login: 'Login',
     logout: 'Logout',
+    newPost: 'New Post',
+    submit: 'Submit',
+    excerpt: 'Excerpt',
 };

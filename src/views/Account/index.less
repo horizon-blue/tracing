@@ -1,3 +1,58 @@
-main.account-page {
+main.account-page,
+main.editor-page {
   margin-top: 3vh;
+}
+
+#simplepostmd-editor-1-wrapper {
+  .editor-toolbar a,
+  .CodeMirror-code,
+  .CodeMirror {
+    color: white !important;
+  }
+
+  .editor-toolbar.fullscreen {
+    background: #0d1823;
+  }
+
+  .editor-toolbar a:hover,
+  .editor-toolbar a.active {
+    background: rgba(39, 105, 175, 0.3);
+  }
+
+  .editor-toolbar.disabled-for-preview a {
+    background: rgba(40, 105, 175, 0.3);
+  }
+
+  .cm-spell-error:not(.cm-url):not(.cm-comment):not(.cm-tag):not(.cm-word) {
+    background: rgba(255, 100, 100, 0.3);
+  }
+
+  .CodeMirror {
+    background-color: rgba(39, 105, 175, 0.1);
+  }
+
+  .editor-preview.editor-preview-active {
+    background-color: #0d1823;
+  }
+
+  .CodeMirror-cursor {
+    border-left: 1px solid white;
+  }
+}
+
+.ui.massive.inverted.form .field input {
+  background: none;
+  border-width: 0;
+  color: white;
+}
+
+.ui.inverted.form .field {
+  input,
+  textarea {
+    background: none;
+    border-width: 1.5px;
+    border-color: rgba(190, 220, 255, 0.5);
+    color: white;
+    resize: none;
+  }
 }

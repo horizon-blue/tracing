@@ -15,4 +15,7 @@ export default {
     password: '密码',
     login: '登录',
     logout: '登出',
+    newPost: '新文章',
+    submit: '提交',
+    excerpt: '简介',
 };
