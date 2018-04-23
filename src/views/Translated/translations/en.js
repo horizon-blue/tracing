@@ -3,7 +3,7 @@ export default {
     menuBlog: 'Blog',
     menuOtherLanguage: '中文',
     menuLogin: 'Login',
-    menuLogout: 'Logout',
+    menuAccount: 'Account',
     menuAbout: 'About',
     tags: 'Tags',
     category: 'Category',
@@ -11,7 +11,7 @@ export default {
     comments: 'Comments',
     blogPostedAt: '%{name} posted at %{date}',
     reply: 'Reply',
-    username: 'Username',
+    name: 'Name',
     password: 'Password',
     login: 'Login',
 };

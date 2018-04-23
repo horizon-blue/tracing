@@ -11,6 +11,9 @@ graphene-sqlalchemy = ">=2.0"
 flask-graphql = "*"
 flask-cors = "*"
 snapshottest = "*"
+sqlalchemy-utils = "*"
+passlib = "*"
+pyjwt = "*"
 
 [dev-packages]
 

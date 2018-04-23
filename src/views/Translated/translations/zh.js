@@ -3,7 +3,7 @@ export default {
     menuBlog: '博客',
     menuOtherLanguage: 'English',
     menuLogin: '登录',
-    menuLogout: '登出',
+    menuAccount: '账号',
     menuAbout: '关于',
     tags: '标签',
     category: '分类',
@@ -11,7 +11,7 @@ export default {
     comments: '评论',
     blogPostedAt: '%{name} 发布于 %{date}',
     reply: '回复',
-    username: '用户名',
+    name: '名字',
     password: '密码',
     login: '登录',
 };
