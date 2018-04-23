@@ -6,6 +6,7 @@ import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import ErrorMessage from '../ErrorMessage';
+import Loading from '../Loading';
 import Translated from '../Translated';
 import actions from '../../actions';
 import './index.less';
@@ -46,11 +47,11 @@ class Login extends PureComponent {
   render() {
     if (this.props.token) return <Redirect to="/" />;
 
-    const { name, password, error } = this.state;
+    const { name, password, error, loading } = this.state;
 
     return (
       <Container text as="main" textAlign="center">
-        <Form inverted className="login-form" loading={this.state.loading}>
+        <Form inverted className="login-form">
           <Form.Group widths="equal">
             <Form.Field>
               <Translated as="label" id="name" />
@@ -77,6 +78,7 @@ class Login extends PureComponent {
           />
         </Form>
         {!!error && <ErrorMessage value={error} />}
+        {loading && <Loading />}
       </Container>
     );
   }
