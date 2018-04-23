@@ -4,6 +4,7 @@ import jwt
 import datetime
 from secrets import TOKEN_SECRET
 from ..objectTypes import User
+import os
 
 
 def get_tomorrow():
@@ -11,6 +12,8 @@ def get_tomorrow():
     Helper function to get tomorrow
     :return: datetime represents tomorrow
     """
+    if os.environ.get("__TEST__"):
+        return datetime.datetime(1901, 12, 21)
     return datetime.datetime.now() + datetime.timedelta(days=1)
 
 

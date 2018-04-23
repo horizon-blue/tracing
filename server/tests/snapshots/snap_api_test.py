@@ -111,3 +111,28 @@ snapshots['TestAPI::test_post_comment 1'] = {
         }
     }
 }
+
+snapshots['TestAPI::test_login_fail 1'] = {
+    'data': {
+        'login': None
+    },
+    'errors': [
+        {
+            'locations': [
+                {
+                    'column': 12,
+                    'line': 1
+                }
+            ],
+            'message': 'Incorrect credentials'
+        }
+    ]
+}
+
+snapshots['TestAPI::test_login 1'] = {
+    'data': {
+        'login': {
+            'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImV4cCI6LTIxNDY4NjcyMDB9.TJ5qA5aFbyh0t92NEhUcs9q2RmXf_mIsnvdZyKozqI4'
+        }
+    }
+}
