@@ -55,6 +55,10 @@ If the user is admin, he or she can see and post new content using the post edit
 
 ![Editor](./img/editor.png)
 
+You can also edit and preview at the same time in full-screen mode.
+
+![EditorPreview](./img/editorPreview.png)
+
 ## Miscellaneous
 
 ### Switching Language
