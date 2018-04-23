@@ -36,6 +36,9 @@ class CreateNewPost(Mutation):
         if not viewer or not viewer.isAdmin:
             raise GraphQLError("Permission denied")
         else:
+            tags = set(tags)  # remove duplicate tags
+            if title == "" or content == "" or category == "" or "" in tags:
+                raise GraphQLError("Missing required fields")
             category_model = Category.get_query(info).filter_by(name=category).first()
             if not category_model:
                 category_model = CategoryModel(name=category)
