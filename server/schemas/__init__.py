@@ -15,7 +15,7 @@ class Query(ObjectType):
     post = Node.Field(Post)
 
     def resolve_viewer(self, info):
-        return info.context.get("viewer")
+        return self.get("viewer")
 
 
 schema = Schema(query=Query, mutation=Mutations,
