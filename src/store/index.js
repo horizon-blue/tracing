@@ -1,10 +1,12 @@
 import { createStore } from 'redux';
-import { Map } from 'immutable';
+import initialState from './initialState';
 import rootReducer from './reducers';
 
-export default createStore(
+const store = createStore(
   rootReducer,
-  Map(),
+  initialState,
   /* Enable Redux Devtools Chrome Extension */
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
+
+export default store;

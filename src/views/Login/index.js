@@ -88,7 +88,7 @@ const loginMutation = gql`
   }
 `;
 
-const mapStateToProps = state => ({ token: state.get('token') });
+const mapStateToProps = state => ({ token: state.token });
 
 const mapDispatchToProps = dispatch => ({
   setToken: token =>

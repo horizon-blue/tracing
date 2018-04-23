@@ -43,6 +43,6 @@ class Translated extends PureComponent {
   }
 }
 
-const mapStateToProps = state => ({ locale: state.get('locale') });
+const mapStateToProps = state => ({ locale: state.locale });
 
 export default connect(mapStateToProps)(Translated);
