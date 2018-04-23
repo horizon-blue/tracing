@@ -21,6 +21,7 @@ class Login extends PureComponent {
   state = {
     name: '',
     password: '',
+    loading: false,
   };
 
   /**
@@ -32,13 +33,14 @@ class Login extends PureComponent {
     this.setState({ [name]: value });
 
   handleLogin = () => {
+    this.setState({ loading: true });
     const { name, password } = this.state;
     const { setToken } = this.props;
 
     this.props
       .mutate({ variables: { name, password } })
       .then(({ data: { login: { token } } }) => setToken(token))
-      .catch(error => this.setState({ error }));
+      .catch(error => this.setState({ error, loading: false }));
   };
 
   render() {
@@ -48,7 +50,7 @@ class Login extends PureComponent {
 
     return (
       <Container text as="main" textAlign="center">
-        <Form inverted className="login-form">
+        <Form inverted className="login-form" loading={this.state.loading}>
           <Form.Group widths="equal">
             <Form.Field>
               <Translated as="label" id="name" />
