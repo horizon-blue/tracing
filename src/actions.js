@@ -1,4 +1,5 @@
 export default {
   TOGGLE_LOCALE: 'TOGGLE_LOCALE',
   SET_TOKEN: 'SET_TOKEN',
+  REMOVE_TOKEN: 'REMOVE_TOKEN',
 };

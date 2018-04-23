@@ -14,4 +14,5 @@ export default {
     name: '名字',
     password: '密码',
     login: '登录',
+    logout: '登出',
 };
