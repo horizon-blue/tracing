@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<main
+  className="ui text center aligned container"
+>
+  <form
+    action={undefined}
+    className="ui inverted form login-form"
+    onSubmit={[Function]}
+  >
+    <div
+      className="equal width fields"
+    >
+      <div
+        className="field"
+      >
+        <label
+          dispatch={undefined}
+        >
+          Name
+        </label>
+        <input
+          name="name"
+          onChange={[Function]}
+          value=""
+        />
+      </div>
+      <div
+        className="field"
+      >
+        <label
+          dispatch={undefined}
+        >
+          Password
+        </label>
+        <input
+          name="password"
+          onChange={[Function]}
+          type="password"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      className="field"
+    >
+      <button
+        className="ui blue basic inverted button"
+        disabled={undefined}
+        dispatch={undefined}
+        onClick={[Function]}
+        required={undefined}
+        role="button"
+        tabIndex={undefined}
+        type="submit"
+      >
+        Login
+      </button>
+    </div>
+  </form>
+</main>
+`;

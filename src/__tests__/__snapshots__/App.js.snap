@@ -2,9 +2,7 @@
 
 exports[`renders correctly 1`] = `
 <div>
-  <header
-    className="ui center aligned container"
-  >
+  <header>
     <img
       alt="gear icon"
       className="header-logo clockwise"
@@ -17,9 +15,9 @@ exports[`renders correctly 1`] = `
                 saturate(115%)
                 opacity(95%)
               ",
-          "height": "40vh",
-          "left": "0%",
-          "top": "0%",
+          "height": "38vh",
+          "left": "5%",
+          "top": "5%",
         }
       }
     />
@@ -35,9 +33,9 @@ exports[`renders correctly 1`] = `
                 saturate(115%)
                 opacity(95%)
               ",
-          "height": "40vh",
-          "left": "9%",
-          "top": "9%",
+          "height": "38vh",
+          "left": "11.818181818181818%",
+          "top": "11.818181818181818%",
         }
       }
     />
@@ -53,9 +51,9 @@ exports[`renders correctly 1`] = `
                 saturate(115%)
                 opacity(95%)
               ",
-          "height": "40vh",
-          "left": "18%",
-          "top": "18%",
+          "height": "38vh",
+          "left": "18.636363636363637%",
+          "top": "18.636363636363637%",
         }
       }
     />
@@ -71,9 +69,9 @@ exports[`renders correctly 1`] = `
                 saturate(115%)
                 opacity(95%)
               ",
-          "height": "40vh",
-          "left": "27%",
-          "top": "27%",
+          "height": "38vh",
+          "left": "25.454545454545453%",
+          "top": "25.454545454545453%",
         }
       }
     />
@@ -89,9 +87,9 @@ exports[`renders correctly 1`] = `
                 saturate(115%)
                 opacity(95%)
               ",
-          "height": "40vh",
-          "left": "36%",
-          "top": "36%",
+          "height": "38vh",
+          "left": "32.27272727272727%",
+          "top": "32.27272727272727%",
         }
       }
     />
@@ -107,9 +105,9 @@ exports[`renders correctly 1`] = `
                 saturate(115%)
                 opacity(95%)
               ",
-          "height": "40vh",
-          "left": "45%",
-          "top": "45%",
+          "height": "38vh",
+          "left": "39.09090909090909%",
+          "top": "39.09090909090909%",
         }
       }
     />
@@ -125,9 +123,9 @@ exports[`renders correctly 1`] = `
                 saturate(115%)
                 opacity(95%)
               ",
-          "height": "40vh",
-          "left": "54%",
-          "top": "54%",
+          "height": "38vh",
+          "left": "45.90909090909091%",
+          "top": "45.90909090909091%",
         }
       }
     />
@@ -143,9 +141,9 @@ exports[`renders correctly 1`] = `
                 saturate(115%)
                 opacity(95%)
               ",
-          "height": "40vh",
-          "left": "63%",
-          "top": "63%",
+          "height": "38vh",
+          "left": "52.72727272727273%",
+          "top": "52.72727272727273%",
         }
       }
     />
@@ -161,9 +159,9 @@ exports[`renders correctly 1`] = `
                 saturate(115%)
                 opacity(95%)
               ",
-          "height": "40vh",
-          "left": "72%",
-          "top": "72%",
+          "height": "38vh",
+          "left": "59.54545454545455%",
+          "top": "59.54545454545455%",
         }
       }
     />
@@ -179,9 +177,27 @@ exports[`renders correctly 1`] = `
                 saturate(115%)
                 opacity(95%)
               ",
-          "height": "40vh",
-          "left": "81%",
-          "top": "81%",
+          "height": "38vh",
+          "left": "66.36363636363637%",
+          "top": "66.36363636363637%",
+        }
+      }
+    />
+    <img
+      alt="gear icon"
+      className="header-logo clockwise"
+      src="gear2.svg"
+      style={
+        Object {
+          "filter": "
+                hue-rotate(360deg)
+                brightness(85%)
+                saturate(115%)
+                opacity(95%)
+              ",
+          "height": "38vh",
+          "left": "73.18181818181819%",
+          "top": "73.18181818181819%",
         }
       }
     />

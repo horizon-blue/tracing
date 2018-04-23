@@ -58,7 +58,7 @@ exports[`render with content 1`] = `
               <span
                 dispatch={undefined}
               >
-                Xiaoyan posted at 2017-06-26
+                Xiaoyan posted at 6/26/2017
               </span>
               <span
                 className="blog-meta-divider"
@@ -128,7 +128,7 @@ exports[`render with content 1`] = `
               <span
                 dispatch={undefined}
               >
-                Xiaoyan posted at 2018-01-04
+                Xiaoyan posted at 1/4/2018
               </span>
               <span
                 className="blog-meta-divider"
@@ -148,11 +148,11 @@ exports[`render with content 1`] = `
 `;
 
 exports[`renders loading 1`] = `
-<main
+<div
   className="ui container"
 >
   <div
     className="ui big active inverted centered inline loader"
   />
-</main>
+</div>
 `;

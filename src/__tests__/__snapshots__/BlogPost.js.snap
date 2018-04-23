@@ -27,7 +27,7 @@ exports[`render with content 1`] = `
           aria-hidden="true"
           className="calendar outline icon"
         />
-        2017-06-26
+        6/26/2017
       </span>
     </div>
   </section>
@@ -124,7 +124,7 @@ exports[`render with content 1`] = `
           </span>
           :
            
-          2017-08-23
+          8/23/2017
         </div>
       </div>
     </div>
@@ -150,13 +150,23 @@ exports[`render with content 1`] = `
 `;
 
 exports[`render with error 1`] = `
-<div>
-  Network error
+<div
+  className="ui center aligned container"
+>
+  <div
+    className="ui black message"
+  >
+    Network error
+  </div>
 </div>
 `;
 
 exports[`renders loading 1`] = `
 <div
-  className="ui big active inverted centered inline loader"
-/>
+  className="ui container"
+>
+  <div
+    className="ui big active inverted centered inline loader"
+  />
+</div>
 `;

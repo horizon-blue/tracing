@@ -16,7 +16,6 @@ class Login extends PureComponent {
     mutate: PropTypes.func.isRequired,
     setToken: PropTypes.func.isRequired,
     token: PropTypes.string,
-    history: PropTypes.object.isRequired,
   };
 
   state = {

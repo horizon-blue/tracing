@@ -70,6 +70,8 @@ const mapDispatchToProps = dispatch => ({
     }),
 });
 
+export { AccountHome as AccountHomeView };
+
 export default connect(mapStateToProps, mapDispatchToProps)(
   graphql(viewerInfo)(AccountHome)
 );
