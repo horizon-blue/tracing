@@ -1,3 +1,4 @@
+from flask import request
 from .utils import decode
 from schemas.objectTypes import User
 
@@ -11,11 +12,12 @@ def auth_middleware(next, root, info, **args):
     :param args: rest of arguments
     :return: the execution result
     """
-    if not info.context.session.get("viewer"):
-        token = info.context.headers.get('Authorization')
+    if not info.context.get("viewer"):
+        token = request.headers.get('Authorization')
         try:
-            info.context.session['viewer'] = User.get_query(info).get(decode(token).sub)
+            info.context['viewer'] = User.get_query(info).get(decode(token).sub)
+            root = 'foo'
         except:
-            info.context.session['viewer'] = None
+            info.context['viewer'] = None
 
     return next(root, info, **args)

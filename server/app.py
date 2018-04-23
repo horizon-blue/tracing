@@ -9,8 +9,8 @@ app = Flask(__name__)
 CORS(app, resources=r'/')
 
 # Add graphql endpoint
-app.add_url_rule(
-    '/', view_func=GraphQLView.as_view('graphql', schema=schema, graphiql=True, middleware=middlewares))
+app.add_url_rule('/', view_func=GraphQLView.as_view('graphql', schema=schema, graphiql=True,
+                                                    context={}, middleware=middlewares))
 
 
 @app.teardown_appcontext
