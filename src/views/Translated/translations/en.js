@@ -11,4 +11,7 @@ export default {
     comments: 'Comments',
     blogPostedAt: '%{name} posted at %{date}',
     reply: 'Reply',
+    username: 'Username',
+    password: 'Password',
+    login: 'Login',
 };

@@ -11,4 +11,7 @@ export default {
     comments: '评论',
     blogPostedAt: '%{name} 发布于 %{date}',
     reply: '回复',
+    username: '用户名',
+    password: '密码',
+    login: '登录',
 };

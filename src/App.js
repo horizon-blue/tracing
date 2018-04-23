@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { ApolloProvider } from 'react-apollo';
-import { Header, Home, Nav, Blog, About } from './views';
+import { Header, Home, Nav, Blog, About, Login } from './views';
 
 import client from './client';
 import store from './store';
@@ -26,6 +26,7 @@ class App extends Component {
                 <Route exact path="/" component={Home} />
                 <Route path="/blog" component={Blog} />
                 <Route path="/about" component={About} />
+                <Route path="/login" component={Login} />
               </Switch>
             </div>
           </BrowserRouter>

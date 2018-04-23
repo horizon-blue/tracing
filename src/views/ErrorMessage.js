@@ -2,6 +2,11 @@ import React, { PureComponent } from 'react';
 import { Message, Container } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 
+/**
+ * Display error message using correct format
+ *
+ * @class      ErrorMessage (name)
+ */
 class ErrorMessage extends PureComponent {
   static propTypes = {
     value: PropTypes.object.isRequired,
