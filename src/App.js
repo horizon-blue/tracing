@@ -3,7 +3,16 @@ import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { ApolloProvider } from 'react-apollo';
-import { Header, Home, Nav, Blog, About, Login, Loading } from './views';
+import {
+  Header,
+  Home,
+  Nav,
+  Blog,
+  About,
+  Login,
+  Loading,
+  Account,
+} from './views';
 
 import client from './client';
 import store, { persistor } from './store';
@@ -29,6 +38,7 @@ class App extends Component {
                   <Route path="/blog" component={Blog} />
                   <Route path="/about" component={About} />
                   <Route path="/login" component={Login} />
+                  <Route path="/account" component={Account} />
                 </Switch>
               </div>
             </BrowserRouter>

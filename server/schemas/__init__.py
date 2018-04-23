@@ -1,17 +1,21 @@
-from graphene import relay, ObjectType, Schema
+from graphene import ObjectType, Schema, Field
+from graphene.relay import Node
 from graphene_sqlalchemy import SQLAlchemyConnectionField
 from .objectTypes import *
 from .mutations import Mutations
 
 
 class Query(ObjectType):
-    node = relay.Node.Field()
+    node = Node.Field()
     users = SQLAlchemyConnectionField(User)
     posts = SQLAlchemyConnectionField(Post)
     tags = SQLAlchemyConnectionField(Tag)
     categories = SQLAlchemyConnectionField(Category)
+    viewer = Field(User)
+    post = Node.Field(Post)
 
-    post = relay.Node.Field(Post)
+    def resolve_viewer(self, info):
+        return info.viewer
 
 
 schema = Schema(query=Query, mutation=Mutations,
