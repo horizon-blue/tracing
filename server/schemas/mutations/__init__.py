@@ -1,8 +1,8 @@
 from .Login import Login
 from graphene import ObjectType
-from .CreateNewPost import CreateNewPost
+from .SetPost import SetPost
 
 
 class Mutations(ObjectType):
     login = Login.Field()
-    createNewPost = CreateNewPost.Field()
+    setPost = SetPost.Field()

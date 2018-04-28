@@ -1,18 +1,20 @@
 import datetime
 from database import db_session
-from graphene import Mutation, String, List, NonNull, Field
+from graphene import Mutation, String, List, NonNull, Field, ID
 from graphql import GraphQLError
+from graphene import relay
 from models import Tag as TagModel, Category as CategoryModel, Post as PostModel
 from ..objectTypes import Post, Category, Tag
 
 
-class CreateNewPost(Mutation):
+class SetPost(Mutation):
     """
     The mutation that, when triggered, create a new post for the current
-    viewer (if viewer is admin)
+    viewer (if viewer is admin), or, if ID is supplied, update the given post
     """
 
     class Arguments:
+        id = ID()
         title = String(required=True)
         content = String(required=True)
         category = String(required=True)
@@ -21,10 +23,11 @@ class CreateNewPost(Mutation):
 
     post = Field(Post)
 
-    def mutate(self, info, title, content, category, tags, excerpt):
+    def mutate(self, info, id, title, content, category, tags, excerpt):
         """
         Create the new post
         :param info: information about the request
+        :param id: the id corresponds to the post
         :param title: title of the post
         :param content: content of the post (in Markdown format)
         :param category: category of the post
@@ -36,17 +39,24 @@ class CreateNewPost(Mutation):
         if not viewer or not viewer.isAdmin:
             raise GraphQLError("Permission denied")
         else:
+            if id is None:
+                post = PostModel()
+            else:
+                print("id", relay.Node.get_node_from_global_id(info, id))
+                post = relay.Node.get_node_from_global_id(info, id)
+
             tags = set(tags)  # remove duplicate tags
             if title == "" or content == "" or category == "" or "" in tags:
                 raise GraphQLError("Missing required fields")
-            category_model = Category.get_query(info).filter_by(name=category).first()
-            if not category_model:
-                category_model = CategoryModel(name=category)
-            tag_models = [Tag.get_query(info).filter_by(name=tag).first() or TagModel(name=tag) for tag in tags]
+            post.category = Category.get_query(info).filter_by(name=category).first() or CategoryModel(name=category)
+            post.tags = [Tag.get_query(info).filter_by(name=tag).first() or TagModel(name=tag) for tag in tags]
+            post.title = title
+            post.content = content
+            post.publishDate = post.publishDate or datetime.datetime.utcnow()
+            post.lastUpdateDate = datetime.datetime.utcnow()
+            post.author = viewer
+            post.excerpt = excerpt
 
-            post = PostModel(title=title, content=content, category=category_model, tags=tag_models,
-                             publishDate=datetime.datetime.utcnow(), author=viewer, excerpt=excerpt)
-
-            db_session.add_all([post, category_model, *tag_models])
+            db_session.add(post)
             db_session.commit()
-            return CreateNewPost(post=post)
+            return SetPost(post=post)
