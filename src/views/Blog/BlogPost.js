@@ -9,7 +9,6 @@ import {
 } from 'semantic-ui-react';
 import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import moment from 'moment';
 import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
 import BlogContent from './BlogContent';
@@ -17,6 +16,7 @@ import Translated from '../Translated';
 import Comments from './Comments';
 import Loading from '../Loading';
 import ErrorMessage from '../ErrorMessage';
+import DateView from '../DateView';
 
 /**
  * The content to show on blog post page (for each post)
@@ -64,10 +64,7 @@ class BlogPost extends PureComponent {
             </span>
             <span>
               <Icon name="calendar outline" />
-              {moment
-                .utc(post.publishDate)
-                .local()
-                .format('l')}
+              <DateView value={post.publishDate} />
             </span>
           </div>
         </Container>
@@ -84,10 +81,7 @@ class BlogPost extends PureComponent {
               </Grid.Column>
               <Grid.Column>
                 <Translated id="updatedAt" />:{' '}
-                {moment
-                  .utc(post.lastUpdateDate)
-                  .local()
-                  .format('l')}
+                <DateView value={post.lastUpdateDate} />
               </Grid.Column>
             </Grid.Row>
           </Grid>
@@ -137,6 +131,10 @@ const getPost = gql`
           }
         }
       }
+    }
+    viewer {
+      id
+      isAdmin
     }
   }
 `;

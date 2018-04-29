@@ -1,5 +1,5 @@
 import Polyglot from 'node-polyglot';
-import zh from './zh';
+import zh from './zh-cn';
 import en from './en';
 
 export default {
@@ -7,8 +7,8 @@ export default {
     locale: 'en',
     phrases: en,
   }),
-  zh: new Polyglot({
-    locale: 'zh',
+  'zh-cn': new Polyglot({
+    locale: 'zh-cn',
     phrases: zh,
   }),
 };

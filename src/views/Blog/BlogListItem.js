@@ -1,9 +1,10 @@
 import React, { PureComponent } from 'react';
 import { Container, Grid, Header, Label } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import moment from 'moment';
 import Translated from '../Translated';
+import DateView from '../DateView';
 
 /**
  * Class for blog list item.
@@ -13,6 +14,7 @@ import Translated from '../Translated';
 class BlogListItem extends PureComponent {
   static propTypes = {
     post: PropTypes.object.isRequired,
+    locale: PropTypes.string.isRequired,
   };
 
   /**
@@ -30,7 +32,7 @@ class BlogListItem extends PureComponent {
   }
 
   render() {
-    const { post } = this.props;
+    const { post, locale } = this.props;
 
     return (
       <Link to={`/blog/post/${post.id}`}>
@@ -64,10 +66,7 @@ class BlogListItem extends PureComponent {
                     id="blogPostedAt"
                     variables={{
                       name: post.author.name,
-                      date: moment
-                        .utc(post.publishDate)
-                        .local()
-                        .format('l'),
+                      date: DateView.parse(post.publishDate, locale),
                     }}
                   />
                   <span className="blog-meta-divider">|</span>
@@ -82,4 +81,6 @@ class BlogListItem extends PureComponent {
   }
 }
 
-export default BlogListItem;
+const mapStateToProps = state => ({ locale: state.locale });
+
+export default connect(mapStateToProps)(BlogListItem);
