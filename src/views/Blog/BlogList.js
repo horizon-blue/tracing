@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import { Container } from 'semantic-ui-react';
+import { Seq } from 'immutable';
 import PropTypes from 'prop-types';
 import BlogListItem from './BlogListItem';
 import gql from 'graphql-tag';
@@ -35,7 +36,11 @@ class BlogList extends PureComponent {
     if (error) return <ErrorMessage value={error} />;
 
     return (
-      <Container as="main">{posts.edges.map(this.renderPostItem)}</Container>
+      <Container as="main">
+        {Seq(posts.edges)
+          .reverse()
+          .map(this.renderPostItem)}
+      </Container>
     );
   }
 }

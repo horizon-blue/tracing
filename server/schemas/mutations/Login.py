@@ -41,9 +41,11 @@ class Login(Mutation):
 
     token = String()
 
-    def mutate(self, info, name, password):
+    @staticmethod
+    def mutate(root, info, name, password):
         """
         Generate the token for the specific user, if exist
+        :param root: the root information
         :param info: context object
         :param name: name of user
         :param password: password of user

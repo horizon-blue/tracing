@@ -22,6 +22,14 @@ class AccountHome extends PureComponent {
     removeToken: PropTypes.func.isRequired,
   };
 
+  componentDidUpdate() {
+    const { data: { loading, viewer }, removeToken } = this.props;
+
+    if (!loading && !viewer) {
+      removeToken();
+    }
+  }
+
   render() {
     const { data: { loading, error, viewer }, token } = this.props;
 
@@ -30,6 +38,8 @@ class AccountHome extends PureComponent {
     if (loading) return <Loading />;
 
     if (error) return <ErrorMessage value={error} />;
+
+    if (!viewer) return <Redirect to="/login" />;
 
     return (
       <Container as="main" textAlign="center" className="account-page">

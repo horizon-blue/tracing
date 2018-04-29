@@ -23,9 +23,11 @@ class SetPost(Mutation):
 
     post = Field(Post)
 
-    def mutate(self, info, id, title, content, category, tags, excerpt):
+    @staticmethod
+    def mutate(root, info, id, title, content, category, tags, excerpt):
         """
         Create the new post
+        :param root: the root information
         :param info: information about the request
         :param id: the id corresponds to the post
         :param title: title of the post
@@ -35,7 +37,7 @@ class SetPost(Mutation):
         :param excerpt: brief description about the post.
         :return: the new post, or None
         """
-        viewer = self.get("viewer")
+        viewer = root.get("viewer")
         if not viewer or not viewer.isAdmin:
             raise GraphQLError("Permission denied")
         else:
