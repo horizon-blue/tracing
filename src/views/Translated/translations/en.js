@@ -18,4 +18,5 @@ export default {
     newPost: 'New Post',
     submit: 'Submit',
     excerpt: 'Excerpt',
+    edit: 'Edit',
 };

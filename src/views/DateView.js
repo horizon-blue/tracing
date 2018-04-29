@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
+import { Popup } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import 'moment/locale/zh-cn';
@@ -30,7 +31,18 @@ class DateView extends PureComponent {
   }
 
   render() {
-    return <span>{DateView.parse(this.props.value, this.props.locale)}</span>;
+    return (
+      <Popup
+        inverted
+        trigger={
+          <span>{DateView.parse(this.props.value, this.props.locale)}</span>
+        }
+        content={moment
+          .utc(this.props.value)
+          .local()
+          .format('LLL')}
+      />
+    );
   }
 }
 

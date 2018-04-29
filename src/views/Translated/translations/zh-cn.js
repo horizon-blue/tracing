@@ -18,4 +18,5 @@ export default {
     newPost: '新文章',
     submit: '提交',
     excerpt: '简介',
+    edit: '编辑',
 };

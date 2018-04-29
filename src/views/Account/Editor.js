@@ -28,19 +28,32 @@ class Editor extends PureComponent {
     category: '',
   };
 
+  componentDidMount() {
+    if (this.props.data && this.props.data.post)
+      this.loadPost(this.props.data.post);
+  }
+
   componentDidUpdate(prevProps) {
     // load post content to editor
-    if (this.props.data && !prevProps.data.post && this.props.data.post) {
-      const { data: { post } } = this.props;
-      this.setState({
-        title: post.title,
-        content: post.content,
-        excerpt: post.excerpt,
-        tags: post.tags.edges.map(({ node: { name } }) => name).join(', '),
-        category: post.category.name,
-      });
+    if (this.props.data && prevProps.data.post !== this.props.data.post) {
+      this.loadPost(this.props.data.post);
     }
   }
+
+  /**
+   * Load the pre-existed post to editor
+   *
+   * @param      {object}  post    The post
+   */
+  loadPost = post => {
+    this.setState({
+      title: post.title,
+      content: post.content,
+      excerpt: post.excerpt,
+      tags: post.tags.edges.map(({ node: { name } }) => name).join(', '),
+      category: post.category.name,
+    });
+  };
 
   /**
    * Update the current value in the input field to the state

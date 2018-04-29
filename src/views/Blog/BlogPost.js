@@ -7,7 +7,7 @@ import {
   Label,
   Grid,
 } from 'semantic-ui-react';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
@@ -43,7 +43,7 @@ class BlogPost extends PureComponent {
   }
 
   render() {
-    const { data: { loading, error, post } } = this.props;
+    const { data: { loading, error, post, viewer } } = this.props;
 
     if (loading) return <Loading />;
 
@@ -66,6 +66,15 @@ class BlogPost extends PureComponent {
               <Icon name="calendar outline" />
               <DateView value={post.publishDate} />
             </span>
+            {viewer &&
+              viewer.isAdmin && (
+                <span>
+                  <Link to={`/account/editor/${post.id}`}>
+                    <Icon name="edit" />
+                    <Translated id="edit" />
+                  </Link>
+                </span>
+              )}
           </div>
         </Container>
         <BlogContent content={post.content} />
