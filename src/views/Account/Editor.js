@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import { Container, Form } from 'semantic-ui-react';
 import SimpleMDE from 'react-simplemde-editor';
 import PropTypes from 'prop-types';
+import { Redirect } from 'react-router-dom';
 import gql from 'graphql-tag';
 import { graphql } from 'react-apollo';
 import 'simplemde/dist/simplemde.min.css';
@@ -15,6 +16,8 @@ class Editor extends PureComponent {
   static propTypes = {
     mutate: PropTypes.func.isRequired,
     history: PropTypes.object.isRequired,
+    match: PropTypes.object.isRequired,
+    data: PropTypes.object,
   };
 
   state = {
@@ -24,6 +27,20 @@ class Editor extends PureComponent {
     tags: '',
     category: '',
   };
+
+  componentDidUpdate(prevProps) {
+    // load post content to editor
+    if (this.props.data && !prevProps.data.post && this.props.data.post) {
+      const { data: { post } } = this.props;
+      this.setState({
+        title: post.title,
+        content: post.content,
+        excerpt: post.excerpt,
+        tags: post.tags.edges.map(({ node: { name } }) => name).join(', '),
+        category: post.category.name,
+      });
+    }
+  }
 
   /**
    * Update the current value in the input field to the state
@@ -44,6 +61,7 @@ class Editor extends PureComponent {
     this.props
       .mutate({
         variables: {
+          id: this.props.match.params.postId,
           title,
           content,
           excerpt,
@@ -51,7 +69,7 @@ class Editor extends PureComponent {
           tags: tags.split(',').map(tag => tag.trim()),
         },
       })
-      .then(({ data: { createNewPost: { post: { id } } } }) =>
+      .then(({ data: { setPost: { post: { id } } } }) =>
         this.props.history.push(`/blog/post/${id}`)
       )
       .catch(error => this.setState({ error, loading: false }));
@@ -67,6 +85,17 @@ class Editor extends PureComponent {
       error,
       loading,
     } = this.state;
+
+    if (this.props.data) {
+      // Editing post
+      const { data: { loading, error, post } } = this.props;
+
+      if (loading) return <Loading />;
+
+      if (error) return <ErrorMessage value={error} />;
+
+      if (!post) return <Redirect to="/account/editor" />;
+    }
 
     return (
       <Container as="main" className="editor-page">
@@ -125,15 +154,17 @@ class Editor extends PureComponent {
   }
 }
 
-const createPostMutation = gql`
+const setPostMutation = gql`
   mutation(
+    $id: ID
     $title: String!
     $content: String!
     $excerpt: String!
     $category: String!
     $tags: [String!]
   ) {
-    createNewPost(
+    setPost(
+      id: $id
       title: $title
       content: $content
       category: $category
@@ -147,4 +178,33 @@ const createPostMutation = gql`
   }
 `;
 
-export default graphql(createPostMutation)(Editor);
+/**
+ * Load pre-existed post
+ */
+const getPost = gql`
+  query($postId: ID!) {
+    post(id: $postId) {
+      id
+      title
+      excerpt
+      category {
+        id
+        name
+      }
+      tags {
+        edges {
+          node {
+            id
+            name
+          }
+        }
+      }
+      content
+    }
+  }
+`;
+
+export default graphql(getPost, {
+  skip: ({ match: { params: { postId } } }) => !postId,
+  options: ({ match: { params: variables } }) => ({ variables }),
+})(graphql(setPostMutation)(Editor));

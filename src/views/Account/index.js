@@ -14,7 +14,8 @@ class Account extends PureComponent {
     return (
       <Switch>
         <Route exact path="/account" component={AccountHome} />
-        <Route path="/account/editor" component={Editor} />
+        <Route exact path="/account/editor" component={Editor} />
+        <Route path="/account/editor/:postId" component={Editor} />
       </Switch>
     );
   }
