@@ -186,6 +186,40 @@ const setPostMutation = gql`
     ) {
       post {
         id
+        title
+        category {
+          id
+          name
+        }
+        tags {
+          edges {
+            node {
+              id
+              name
+            }
+          }
+        }
+        author {
+          id
+          name
+        }
+        publishDate
+        lastUpdateDate
+        content
+        comments {
+          edges {
+            node {
+              id
+              author {
+                id
+                name
+                avatar
+              }
+              createDate
+              content
+            }
+          }
+        }
       }
     }
   }

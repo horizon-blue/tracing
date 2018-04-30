@@ -19,4 +19,6 @@ export default {
     submit: 'Submit',
     excerpt: 'Excerpt',
     edit: 'Edit',
+    search: 'Search',
+    keyword: 'Keyword',
 };

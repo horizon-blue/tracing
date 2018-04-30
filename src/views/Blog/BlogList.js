@@ -16,6 +16,7 @@ import ErrorMessage from '../ErrorMessage';
 class BlogList extends PureComponent {
   static propTypes = {
     data: PropTypes.object.isRequired,
+    query: PropTypes.string,
   };
 
   /**
@@ -46,8 +47,8 @@ class BlogList extends PureComponent {
 }
 
 const getAllPosts = gql`
-  {
-    posts {
+  query($query: String) {
+    posts(query: $query) {
       edges {
         node {
           id
@@ -77,4 +78,8 @@ const getAllPosts = gql`
 `;
 
 export { BlogList as BlogListView };
-export default graphql(getAllPosts)(BlogList);
+export default graphql(getAllPosts, {
+  options: ({ query }) => ({
+    variables: { query },
+  }),
+})(BlogList);

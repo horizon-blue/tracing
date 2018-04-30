@@ -19,4 +19,6 @@ export default {
     submit: '提交',
     excerpt: '简介',
     edit: '编辑',
+    search: '搜索',
+    keyword: '关键词',
 };

@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import BlogList from './BlogList';
+import BlogHome from './BlogHome';
 import BlogPost from './BlogPost';
 import './index.less';
 
@@ -13,7 +13,7 @@ class Blog extends PureComponent {
   render() {
     return (
       <Switch>
-        <Route exact path="/blog" component={BlogList} />
+        <Route exact path="/blog" component={BlogHome} />
         <Route path="/blog/post/:postId" component={BlogPost} />
       </Switch>
     );
