@@ -1,9 +1,16 @@
 import React, { PureComponent } from 'react';
-import { Container, Button, Grid, Image, Header } from 'semantic-ui-react';
+import {
+  Container,
+  Button,
+  Grid,
+  Image,
+  Header,
+  Statistic,
+} from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import gql from 'graphql-tag';
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import { graphql } from 'react-apollo';
 import Loading from '../Loading';
 import ErrorMessage from '../ErrorMessage';
@@ -34,7 +41,10 @@ class AccountHome extends PureComponent {
   }
 
   render() {
-    const { data: { loading, error, viewer }, token } = this.props;
+    const {
+      data: { loading, error, viewer, posts, users },
+      token,
+    } = this.props;
 
     if (!token) return <Redirect to="/" />;
 
@@ -45,16 +55,16 @@ class AccountHome extends PureComponent {
     if (!viewer) return <Redirect to="/login" />;
 
     return (
-      <Container as="main" textAlign="center" className="account-page">
+      <Container as="main" textAlign="center" className="account-page" text>
         <Grid>
           <Row centered>
-            <Col computer={2} tablet={4} mobile={7}>
+            <Col computer={4} tablet={6} mobile={8}>
               <Image src={viewer.avatar} rounded />
             </Col>
             <Col
-              computer={5}
-              tablet={7}
-              mobile={13}
+              computer={7}
+              tablet={9}
+              mobile={16}
               verticalAlign="middle"
               textAlign="left"
               className="account-info"
@@ -79,15 +89,44 @@ class AccountHome extends PureComponent {
               </Row>
             </Col>
           </Row>
+          <Row divided centered>
+            <Col width={16}>
+              <Statistic.Group
+                widths={2}
+                color="blue"
+                inverted
+                className="stat-container"
+              >
+                <Statistic as={Link} to={`/account/posts`}>
+                  <Statistic.Value>{posts.totalCount}</Statistic.Value>
+                  <Translated
+                    as={Statistic.Label}
+                    id="post"
+                    variables={posts.totalCount}
+                  />
+                </Statistic>
+                <Statistic>
+                  <Statistic.Value>{users.totalCount}</Statistic.Value>
+                  <Translated
+                    as={Statistic.Label}
+                    id="user"
+                    variables={users.totalCount}
+                  />
+                </Statistic>
+              </Statistic.Group>
+            </Col>
+          </Row>
+          <Row centered>
+            <Translated
+              inverted
+              as={Button}
+              id="logout"
+              basic
+              color="blue"
+              onClick={this.props.removeToken}
+            />
+          </Row>
         </Grid>
-        <Translated
-          inverted
-          as={Button}
-          id="logout"
-          basic
-          color="blue"
-          onClick={this.props.removeToken}
-        />
       </Container>
     );
   }
@@ -102,6 +141,12 @@ const viewerInfo = gql`
       email
       createdDate
       isAdmin
+    }
+    posts {
+      totalCount
+    }
+    users {
+      totalCount
     }
   }
 `;

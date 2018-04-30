@@ -1,16 +1,28 @@
-main.account-page,
 main.editor-page {
   margin-top: 3vh;
 }
 
-.admin-label {
-  margin-left: 0.5vw;
-  color: rgba(157, 204, 254, 0.8);
-}
+main.account-page {
+  & > .grid > .row:not(:last-child) {
+    border-bottom: 1px solid rgb(35, 36, 45);
+    padding: 3vh 0;
+  }
 
-.account-info {
-  & > .row {
-    margin: 1.5vh 0;
+  .admin-label {
+    margin-left: 0.5vw;
+    color: rgba(157, 204, 254, 0.8);
+  }
+
+  .account-info {
+    & > .row {
+      margin: 1.5vh 0;
+    }
+  }
+
+  .stat-container > .ui.statistic {
+    &:not(:first-child) {
+      border-left: 1px solid rgb(35, 36, 45);
+    }
   }
 }
 

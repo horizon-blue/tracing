@@ -1,5 +1,4 @@
 export default {
-    header: '~ 这是一个标题 ~',
     menuBlog: '博客',
     menuOtherLanguage: 'English',
     menuLogin: '登录',
@@ -25,4 +24,6 @@ export default {
     email: '邮箱',
     joinedAt: '加入时间',
     none: '无',
+    post: '文章',
+    user: '用户',
 };

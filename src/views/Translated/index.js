@@ -14,7 +14,7 @@ class Translated extends PureComponent {
     as: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
     id: PropTypes.string.isRequired,
     locale: PropTypes.string.isRequired,
-    variables: PropTypes.object,
+    variables: PropTypes.any,
     defaultMessage: PropTypes.string,
   };
 

@@ -1,5 +1,4 @@
 export default {
-    header: '~ This is a placeholder for Header ~',
     menuBlog: 'Blog',
     menuOtherLanguage: '中文',
     menuLogin: 'Login',
@@ -25,4 +24,6 @@ export default {
     email: 'Email',
     joinedAt: 'Joined at',
     none: 'n/a',
+    post: 'Post |||| Posts',
+    user: 'User |||| Users',
 };

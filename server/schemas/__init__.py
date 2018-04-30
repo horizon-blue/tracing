@@ -9,12 +9,16 @@ from .mutations import Mutations
 class Query(ObjectType):
     node = Node.Field()
     users = SQLAlchemyConnectionField(User)
-    tags = SQLAlchemyConnectionField(Tag)
-    categories = SQLAlchemyConnectionField(Category)
     viewer = Field(User)
 
     post = Node.Field(Post)
     posts = SQLAlchemyConnectionField(Post, args={"query": String()})
+
+    tags = SQLAlchemyConnectionField(Tag)
+    tag = Node.Field(Tag)
+
+    categories = SQLAlchemyConnectionField(Category)
+    category = Node.Field(Category)
 
     @staticmethod
     def resolve_viewer(root, _):
@@ -33,10 +37,12 @@ class Query(ObjectType):
         :param kwargs: rest of the query
         :return: a list of post
         """
-        query = "%{}%".format(kwargs.get("query", ""))
-        model = Post._meta.model
-        return Post.get_query(info).filter(
-            or_(model.title.like(query), model.content.like(query), model.excerpt.like(query))).all()
+        keyword = "%{}%".format(kwargs.get("query", ""))
+        query = Post.get_query(info)
+
+        return query.filter(
+            or_(models.Post.title.like(keyword), models.Post.content.like(keyword),
+                models.Post.excerpt.like(keyword))).all()
 
 
 schema = Schema(query=Query, mutation=Mutations,
