@@ -21,11 +21,23 @@ class BlogContent extends PureComponent {
     content: PropTypes.string.isRequired,
   };
 
+  /**
+   * Helper function to render content
+   *
+   * @param      {<type>}  text    The text
+   * @return     {<type>}  { description_of_the_return_value }
+   */
+  static renderPost(text) {
+    return md.render(text);
+  }
+
   render() {
     return (
       <Container text textAlign="left">
         <main
-          dangerouslySetInnerHTML={{ __html: md.render(this.props.content) }}
+          dangerouslySetInnerHTML={{
+            __html: BlogContent.renderPost(this.props.content),
+          }}
         />
       </Container>
     );

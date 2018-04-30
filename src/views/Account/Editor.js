@@ -9,8 +9,12 @@ import 'simplemde/dist/simplemde.min.css';
 import Translated from '../Translated';
 import ErrorMessage from '../ErrorMessage';
 import Loading from '../Loading';
+import BlogContent from '../Blog/BlogContent';
 
-const editorSetting = { spellChecker: false };
+const editorSetting = {
+  spellChecker: false,
+  previewRender: text => BlogContent.renderPost(text),
+};
 
 class Editor extends PureComponent {
   static propTypes = {
