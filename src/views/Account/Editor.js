@@ -13,6 +13,7 @@ import BlogContent from '../Blog/BlogContent';
 
 const editorSetting = {
   spellChecker: false,
+  styleSelectedText: false,
   previewRender: text => BlogContent.renderPost(text),
 };
 

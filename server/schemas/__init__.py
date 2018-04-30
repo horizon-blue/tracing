@@ -1,4 +1,4 @@
-from graphene import ObjectType, Schema, Field, String
+from graphene import ObjectType, Schema, Field, String, Int
 from graphene.relay import Node
 from graphene_sqlalchemy import SQLAlchemyConnectionField
 from sqlalchemy import or_

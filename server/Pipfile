@@ -7,13 +7,13 @@ name = "pypi"
 flask = "*"
 sqlalchemy = "*"
 graphene = ">=2.0"
-graphene-sqlalchemy = ">=2.0"
 flask-graphql = "*"
 flask-cors = "*"
 snapshottest = "*"
 sqlalchemy-utils = "*"
 passlib = "*"
 pyjwt = "*"
+graphene-sqlalchemy = "*"
 
 [dev-packages]
 
