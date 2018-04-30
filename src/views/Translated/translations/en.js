@@ -12,6 +12,8 @@ export default {
     reply: 'Reply',
     name: 'Name',
     password: 'Password',
+    confirmPassword: 'Comfirm Password',
+    newPassword: 'New Password',
     login: 'Login',
     logout: 'Logout',
     newPost: 'New Post',
@@ -26,4 +28,5 @@ export default {
     none: 'n/a',
     post: 'Post |||| Posts',
     user: 'User |||| Users',
+    avatar: 'Avatar',
 };

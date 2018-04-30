@@ -12,6 +12,8 @@ export default {
     reply: '回复',
     name: '名字',
     password: '密码',
+    confirmPassword: '确认密码',
+    newPassword: '新密码',
     login: '登录',
     logout: '登出',
     newPost: '新文章',
@@ -26,4 +28,5 @@ export default {
     none: '无',
     post: '文章',
     user: '用户',
+    avatar: '头像',
 };

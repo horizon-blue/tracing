@@ -35,7 +35,7 @@ class SetUser(Mutation):
         if not viewer:
             raise GraphQLError("Permission denied")
         else:
-            if User.get_query(info).filter_by(name=name).exists():
+            if name != viewer.name and User.get_query(info).filter_by(name=name).exists():
                 raise GraphQLError("{} is unavailable.".format(name))
             viewer.name = name
             viewer.email = email

@@ -103,7 +103,7 @@ class AccountHome extends PureComponent {
                   inverted
                   className="stat-container"
                 >
-                  <Statistic as={Link} to={`/account/posts`}>
+                  <Statistic as={Link} to={`/account/posts/editor`}>
                     <Statistic.Value>{posts.totalCount}</Statistic.Value>
                     <Translated
                       as={Statistic.Label}
