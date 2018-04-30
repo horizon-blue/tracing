@@ -21,4 +21,8 @@ export default {
     edit: '编辑',
     search: '搜索',
     keyword: '关键词',
+    admin: '管理员',
+    email: '邮箱',
+    joinedAt: '加入时间',
+    none: '无',
 };

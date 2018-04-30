@@ -21,4 +21,8 @@ export default {
     edit: 'Edit',
     search: 'Search',
     keyword: 'Keyword',
+    admin: 'Administrator',
+    email: 'Email',
+    joinedAt: 'Joined at',
+    none: 'n/a',
 };

@@ -1,14 +1,17 @@
 import React, { PureComponent } from 'react';
-import { Container, Button } from 'semantic-ui-react';
+import { Container, Button, Grid, Image, Header } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import gql from 'graphql-tag';
 import { connect } from 'react-redux';
-import { Redirect, Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import { graphql } from 'react-apollo';
 import Loading from '../Loading';
 import ErrorMessage from '../ErrorMessage';
 import Translated from '../Translated';
+import DateView from '../DateView';
 import actions from '../../actions';
+
+const { Column: Col, Row } = Grid;
 
 /**
  * The page that displays all basic account info
@@ -43,9 +46,40 @@ class AccountHome extends PureComponent {
 
     return (
       <Container as="main" textAlign="center" className="account-page">
-        {viewer.isAdmin && (
-          <Translated as={Link} to="/account/editor" id="newPost" />
-        )}
+        <Grid>
+          <Row centered>
+            <Col computer={2} tablet={4} mobile={7}>
+              <Image src={viewer.avatar} rounded />
+            </Col>
+            <Col
+              computer={5}
+              tablet={7}
+              mobile={13}
+              verticalAlign="middle"
+              textAlign="left"
+              className="account-info"
+            >
+              <Row>
+                <Header inverted as="h3">
+                  {viewer.name}
+                  {viewer.isAdmin && (
+                    <span className="admin-label">
+                      (<Translated id="admin" />)
+                    </span>
+                  )}
+                </Header>
+              </Row>
+              <Row>
+                <Translated id="email" />:{' '}
+                {viewer.email || <Translated id="none" />}
+              </Row>
+              <Row>
+                <Translated id="joinedAt" />:{' '}
+                <DateView value={viewer.createdDate} />
+              </Row>
+            </Col>
+          </Row>
+        </Grid>
         <Translated
           inverted
           as={Button}
@@ -65,6 +99,8 @@ const viewerInfo = gql`
       id
       name
       avatar
+      email
+      createdDate
       isAdmin
     }
   }
