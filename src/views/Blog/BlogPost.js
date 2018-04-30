@@ -69,7 +69,7 @@ class BlogPost extends PureComponent {
             {viewer &&
               viewer.isAdmin && (
                 <span>
-                  <Link to={`/account/editor/${post.id}`}>
+                  <Link to={`/account/posts/editor/${post.id}`}>
                     <Icon name="edit" />
                     <Translated id="edit" />
                   </Link>

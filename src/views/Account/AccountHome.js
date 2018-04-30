@@ -19,6 +19,8 @@ import DateView from '../DateView';
 import actions from '../../actions';
 
 const { Column: Col, Row } = Grid;
+const DEFAULT_AVATAR =
+  'https://imgplaceholder.com/300x300/030306/549cea/fa-user';
 
 /**
  * The page that displays all basic account info
@@ -46,7 +48,7 @@ class AccountHome extends PureComponent {
       token,
     } = this.props;
 
-    if (!token) return <Redirect to="/" />;
+    if (!token) return <Redirect to="/login" />;
 
     if (loading) return <Loading />;
 
@@ -59,7 +61,7 @@ class AccountHome extends PureComponent {
         <Grid>
           <Row centered>
             <Col computer={4} tablet={6} mobile={8}>
-              <Image src={viewer.avatar} rounded />
+              <Image src={viewer.avatar || DEFAULT_AVATAR} rounded />
             </Col>
             <Col
               computer={7}
@@ -87,35 +89,40 @@ class AccountHome extends PureComponent {
                 <Translated id="joinedAt" />:{' '}
                 <DateView value={viewer.createdDate} />
               </Row>
+              <Row as={Link} to="/account/edit">
+                <Translated id="edit" />
+              </Row>
             </Col>
           </Row>
-          <Row divided centered>
-            <Col width={16}>
-              <Statistic.Group
-                widths={2}
-                color="blue"
-                inverted
-                className="stat-container"
-              >
-                <Statistic as={Link} to={`/account/posts`}>
-                  <Statistic.Value>{posts.totalCount}</Statistic.Value>
-                  <Translated
-                    as={Statistic.Label}
-                    id="post"
-                    variables={posts.totalCount}
-                  />
-                </Statistic>
-                <Statistic>
-                  <Statistic.Value>{users.totalCount}</Statistic.Value>
-                  <Translated
-                    as={Statistic.Label}
-                    id="user"
-                    variables={users.totalCount}
-                  />
-                </Statistic>
-              </Statistic.Group>
-            </Col>
-          </Row>
+          {viewer.isAdmin && (
+            <Row divided centered>
+              <Col width={16}>
+                <Statistic.Group
+                  widths={2}
+                  color="blue"
+                  inverted
+                  className="stat-container"
+                >
+                  <Statistic as={Link} to={`/account/posts`}>
+                    <Statistic.Value>{posts.totalCount}</Statistic.Value>
+                    <Translated
+                      as={Statistic.Label}
+                      id="post"
+                      variables={posts.totalCount}
+                    />
+                  </Statistic>
+                  <Statistic>
+                    <Statistic.Value>{users.totalCount}</Statistic.Value>
+                    <Translated
+                      as={Statistic.Label}
+                      id="user"
+                      variables={users.totalCount}
+                    />
+                  </Statistic>
+                </Statistic.Group>
+              </Col>
+            </Row>
+          )}
           <Row centered>
             <Translated
               inverted
