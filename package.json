@@ -10,7 +10,7 @@
     "markdown-it": "^8.4.1",
     "markdown-it-katex": "^2.0.3",
     "markdown-it-prism": "^1.1.2",
-    "moment": "^2.22.1",
+    "moment": "^2.29.2",
     "node-polyglot": "^2.2.2",
     "prop-types": "^15.6.1",
     "query-string": "^6.0.0",
